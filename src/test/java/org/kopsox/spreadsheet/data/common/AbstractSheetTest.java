@@ -3,16 +3,13 @@ package org.kopsox.spreadsheet.data.common;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import junit.framework.TestCase;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.kopsox.spreadsheet.data.Sheet;
 import org.kopsox.spreadsheet.data.Value;
 import org.kopsox.spreadsheet.data.Workbook;
 
-public abstract class AbstractSheetTest extends TestCase{
+public abstract class AbstractSheetTest{
 	
 	protected Integer lastColumnFromLastRow;
 	protected Integer lastRow;
@@ -24,7 +21,6 @@ public abstract class AbstractSheetTest extends TestCase{
 	protected Sheet otherSheet;
 	protected Workbook workbook;
 
-	@Override
 	public abstract void setUp() throws Exception;
 	
 	@Test

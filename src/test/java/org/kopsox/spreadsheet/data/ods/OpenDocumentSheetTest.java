@@ -3,7 +3,7 @@ package org.kopsox.spreadsheet.data.ods;
 import java.io.InputStream;
 
 import org.junit.Before;
-import org.kopsox.spreadsheet.AllTests;
+import org.kopsox.spreadsheet.TestUtil;
 import org.kopsox.spreadsheet.SpreadsheetFactory;
 import org.kopsox.spreadsheet.SpreadsheetFactory.SpreadsheetType;
 import org.kopsox.spreadsheet.data.common.AbstractSheetTest;
@@ -14,7 +14,7 @@ public class OpenDocumentSheetTest extends AbstractSheetTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-		InputStream stream = AllTests.getSpreadSheetStrean("opendocument_test.ods");
+		InputStream stream = TestUtil.getSpreadSheetStrean("opendocument_test.ods");
 		this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.OPENDOCUMENT);
 		stream.close();
 		this.sheet = this.workbook.getSheetByIndex(0);

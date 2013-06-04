@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.002" errors="10" skipped="0" tests="10" name="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest">
+<testsuite failures="0" time="0.977" errors="0" skipped="0" tests="10" name="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64"/>
@@ -13,6 +13,7 @@
     <property name="user.country" value="AT"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
+    <property name="test" value="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/home/koni/Programmieren/Sources/JavaSE_Projects/KSpreadsheet"/>
     <property name="java.runtime.version" value="1.7.0_21-b02"/>
@@ -41,7 +42,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-7-openjdk-amd64/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest test-compile surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="de"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -58,284 +59,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testSave">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testEquals">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testHashCode">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testCreateNewSheet">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testCreateNewSheetString">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetNumberOfSheets">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetSelectedSheetIndex">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetSheetByName">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetSheetByIndex">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testSetSelectedSheet">
-    <error message="/pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)" type="java.io.FileNotFoundException">java.io.FileNotFoundException: /pathopendocument_test.ods (Datei oder Verzeichnis nicht gefunden)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)
-	at org.kopsox.spreadsheet.AllTests.getSpreadSheetStrean(AllTests.java:43)
-	at org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest.setUp(OpenDocumentWorkbookTest.java:22)
-	at junit.framework.TestCase.runBare(TestCase.java:132)
-	at junit.framework.TestResult$1.protect(TestResult.java:110)
-	at junit.framework.TestResult.runProtected(TestResult.java:128)
-	at junit.framework.TestResult.run(TestResult.java:113)
-	at junit.framework.TestCase.run(TestCase.java:124)
-	at junit.framework.TestSuite.runTest(TestSuite.java:232)
-	at junit.framework.TestSuite.run(TestSuite.java:227)
-	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:83)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
+  <testcase time="0.804" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testSave"/>
+  <testcase time="0.022" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetSheetByIndex"/>
+  <testcase time="0.018" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testSetSelectedSheet"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testEquals"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testHashCode"/>
+  <testcase time="0.024" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testCreateNewSheet"/>
+  <testcase time="0.019" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testCreateNewSheetString"/>
+  <testcase time="0.011" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetNumberOfSheets"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetSelectedSheetIndex"/>
+  <testcase time="0.009" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbookTest" name="testGetSheetByName"/>
 </testsuite>

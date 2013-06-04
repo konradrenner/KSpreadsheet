@@ -1,10 +1,9 @@
 package org.kopsox.spreadsheet.data.common;
 
-import junit.framework.TestCase;
-
+import static org.junit.Assert.*;
 import org.junit.Test;
 
-public abstract class AbstractValueTest extends TestCase {
+public abstract class AbstractValueTest{
 	
 	/**
 	 * This value is not allowed to be NULL
@@ -24,7 +23,6 @@ public abstract class AbstractValueTest extends TestCase {
 	 */
 	protected AbstractValue thirdValue;
 
-	@Override
 	protected abstract void setUp() throws Exception;
 
 	@Test

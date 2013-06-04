@@ -1,9 +1,6 @@
 package org.kopsox.spreadsheet.data.common;
 
 import java.util.ArrayList;
-
-import junit.framework.TestCase;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.kopsox.spreadsheet.SpreadsheetFactory;
@@ -11,14 +8,13 @@ import org.kopsox.spreadsheet.SpreadsheetFactory.SpreadsheetType;
 import org.kopsox.spreadsheet.data.Sheet;
 import org.kopsox.spreadsheet.data.Workbook;
 
-public abstract class AbstractWorkbookTest extends TestCase {
+public abstract class AbstractWorkbookTest{
 	
 	private final String SHEET_NAME = "SHEET_NAME";
 	protected Workbook workbook;
 	protected Integer numberOfSelectedSheet;
 	protected ArrayList<String> sheetNames;
 
-	@Override
 	public abstract void setUp() throws Exception;
 	
 	@Test

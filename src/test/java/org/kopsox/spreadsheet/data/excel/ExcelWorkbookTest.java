@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.kopsox.spreadsheet.AllTests;
+import org.kopsox.spreadsheet.TestUtil;
 import org.kopsox.spreadsheet.SpreadsheetFactory;
 import org.kopsox.spreadsheet.SpreadsheetFactory.SpreadsheetType;
 import org.kopsox.spreadsheet.data.common.AbstractWorkbookTest;
@@ -20,7 +20,7 @@ public class ExcelWorkbookTest extends AbstractWorkbookTest {
 	@Before
 	@Override
 	public void setUp() throws Exception {
-        InputStream stream = AllTests.getSpreadSheetStrean("excel_test.xls");
+        InputStream stream = TestUtil.getSpreadSheetStrean("excel_test.xls");
         this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.EXCEL);
         stream.close();
         this.sheetNames = new ArrayList<String>(3);

@@ -4,7 +4,7 @@ package org.kopsox.spreadsheet.data.excel;
 import java.io.InputStream;
 
 import org.junit.Before;
-import org.kopsox.spreadsheet.AllTests;
+import org.kopsox.spreadsheet.TestUtil;
 import org.kopsox.spreadsheet.SpreadsheetFactory;
 import org.kopsox.spreadsheet.SpreadsheetFactory.SpreadsheetType;
 import org.kopsox.spreadsheet.data.common.AbstractSheetTest;
@@ -15,7 +15,7 @@ public class ExcelSheetTest extends AbstractSheetTest {
 	@Before
 	@Override
 	public void setUp() throws Exception {
-		InputStream stream = AllTests.getSpreadSheetStrean("excel_test.xls");
+		InputStream stream = TestUtil.getSpreadSheetStrean("excel_test.xls");
 		this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.EXCEL);
 		stream.close();
 		this.sheet = this.workbook.getSheetByIndex(0);
