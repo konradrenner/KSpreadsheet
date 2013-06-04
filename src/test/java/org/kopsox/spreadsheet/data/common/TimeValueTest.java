@@ -1,8 +1,7 @@
 package org.kopsox.spreadsheet.data.common;
-
 import java.sql.Time;
 import java.util.Date;
-
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.kopsox.spreadsheet.data.Value;

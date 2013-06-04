@@ -1,5 +1,5 @@
 package org.kopsox.spreadsheet.data.common;
-
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.kopsox.spreadsheet.data.Value;
@@ -42,7 +42,7 @@ public class DoubleValueTest extends AbstractValueTest {
 	@Test
 	public void testAsDouble() {
 		assertNotNull(primaryValue.asDouble());
-		assertEquals(primaryValue.asDouble(), 1.0);
+            assertEquals(Double.valueOf(primaryValue.asDouble()), Double.valueOf(1.0));
 		assertNotSame(primaryValue.asDouble(), 1.01);
 	}
 

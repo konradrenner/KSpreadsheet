@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.586" errors="0" skipped="0" tests="14" name="org.kopsox.spreadsheet.data.excel.ExcelSheetTest">
+<testsuite failures="0" time="0.554" errors="0" skipped="0" tests="14" name="org.kopsox.spreadsheet.data.excel.ExcelSheetTest">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64"/>
@@ -13,7 +13,6 @@
     <property name="user.country" value="AT"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
-    <property name="test" value="org.kopsox.spreadsheet.data.excel.ExcelSheetTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/home/koni/Programmieren/Sources/JavaSE_Projects/KSpreadsheet"/>
     <property name="java.runtime.version" value="1.7.0_21-b02"/>
@@ -42,7 +41,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-7-openjdk-amd64/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=org.kopsox.spreadsheet.data.excel.ExcelSheetTest test-compile surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="de"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -59,18 +58,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.293" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetWorkbook"/>
-  <testcase time="0.005" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetNumberOfLastColumn"/>
+  <testcase time="0.262" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetWorkbook"/>
+  <testcase time="0.013" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetNumberOfLastColumn"/>
   <testcase time="0.011" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetNumberOfLastRow"/>
-  <testcase time="0.013" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetValueAt"/>
-  <testcase time="0.1" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetFormualaAt"/>
-  <testcase time="0.028" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntString"/>
+  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetValueAt"/>
+  <testcase time="0.096" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetFormualaAt"/>
+  <testcase time="0.029" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntString"/>
   <testcase time="0.007" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntDouble"/>
-  <testcase time="0.015" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntDate"/>
-  <testcase time="0.006" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntTime"/>
-  <testcase time="0.006" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntBoolean"/>
-  <testcase time="0.008" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetSheetIndex"/>
-  <testcase time="0.005" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetSheetName"/>
-  <testcase time="0.005" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testEquals"/>
-  <testcase time="0.011" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testHashCode"/>
+  <testcase time="0.017" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntDate"/>
+  <testcase time="0.005" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntTime"/>
+  <testcase time="0.007" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testSetValueAtIntIntBoolean"/>
+  <testcase time="0.009" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetSheetIndex"/>
+  <testcase time="0.003" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testGetSheetName"/>
+  <testcase time="0.004" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testEquals"/>
+  <testcase time="0.01" classname="org.kopsox.spreadsheet.data.excel.ExcelSheetTest" name="testHashCode"/>
 </testsuite>

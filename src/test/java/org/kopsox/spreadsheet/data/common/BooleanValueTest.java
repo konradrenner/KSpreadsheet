@@ -1,5 +1,6 @@
 package org.kopsox.spreadsheet.data.common;
 
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.kopsox.spreadsheet.data.Value;
