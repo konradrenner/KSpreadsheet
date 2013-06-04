@@ -21,7 +21,6 @@ import java.sql.Time;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
 import org.kopsox.spreadsheet.data.Value;
 import org.kopsox.spreadsheet.data.Workbook;
 import org.kopsox.spreadsheet.data.common.AbstractSheet;
@@ -50,8 +49,15 @@ public class OpenDocumentSheet extends AbstractSheet {
 	 * @see org.kopsox.spreadsheet.data.Sheet#getNumberOfLastColumn(int)
 	 */
 	@Override
-	public int getNumberOfLastColumn(int row) {
-		return this.sheet.getRowByIndex(row).getCellCount();
+    public int getNumberOfLastColumn(int row) {
+        
+            int column = this.sheet.getRowByIndex(row).getCellCount() - 1;
+
+            //if the last column of the row is a blank, it is not the last column (implementation of the poi behavior)
+            while (column > 0 && Value.Type.BLANK.equals(getValueAt(row, column).getType())) {
+                column--;
+            }
+            return column;
 	}
 
 	/* (non-Javadoc)
@@ -59,7 +65,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	 */
 	@Override
 	public int getNumberOfLastRow() {
-		return this.sheet.getRowCount();
+            return this.sheet.getRowCount() - 1;
 	}
 
 	/* (non-Javadoc)

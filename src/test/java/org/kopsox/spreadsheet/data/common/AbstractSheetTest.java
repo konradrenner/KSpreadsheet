@@ -23,28 +23,28 @@ public abstract class AbstractSheetTest{
 
 	public abstract void setUp() throws Exception;
 	
-	@Test
+    @Test(timeout = 10000)
 	public void testGetWorkbook() {
 		checkProperties();
 		
 		Assert.assertEquals(this.workbook, this.sheet.getWorkbook());
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testGetNumberOfLastColumn() {
 		checkProperties();
 		
 		Assert.assertEquals(lastColumnFromLastRow.intValue(), this.sheet.getNumberOfLastColumn(lastRow.intValue()));
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testGetNumberOfLastRow() {
 		checkProperties();
 		
 		Assert.assertEquals(lastRow.intValue(), this.sheet.getNumberOfLastRow());
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testGetValueAt() {
 		checkProperties();
 		
@@ -55,7 +55,7 @@ public abstract class AbstractSheetTest{
 		Assert.assertNotSame(otherValue,valueFromSheet);
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testSetFormualaAt() {
 		checkProperties();
 		String formula = "A1+A2";
@@ -65,7 +65,7 @@ public abstract class AbstractSheetTest{
 		Assert.assertEquals(formula, this.sheet.getValueAt(2, 2).getFormula());
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testSetValueAtIntIntString() {
 		checkProperties();
 		
@@ -79,7 +79,7 @@ public abstract class AbstractSheetTest{
 	}
 
 	@SuppressWarnings("boxing")
-	@Test
+    @Test(timeout = 10000)
 	public void testSetValueAtIntIntDouble() {
 		checkProperties();
 		double svalue = 2.0;
@@ -92,7 +92,7 @@ public abstract class AbstractSheetTest{
 		Assert.assertNotSame(new DoubleValue(2.1), this.sheet.getValueAt(2, 2));
 	}
 
-  @Test
+    @Test(timeout = 10000)
 	public void testSetValueAtIntIntDate() {
 		checkProperties();
 		long svalue = System.currentTimeMillis();
@@ -108,7 +108,7 @@ public abstract class AbstractSheetTest{
 		Assert.assertNotSame(new DateValue(new Date(System.currentTimeMillis())), this.sheet.getValueAt(2, 2));
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testSetValueAtIntIntTime() {
 		checkProperties();
 		long svalue = System.currentTimeMillis();
@@ -121,7 +121,7 @@ public abstract class AbstractSheetTest{
 		Assert.assertNotSame(new Time(System.currentTimeMillis()), this.sheet.getValueAt(2, 2).asTime());
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testSetValueAtIntIntBoolean() {
 		checkProperties();
 		Value value = new BooleanValue(Boolean.TRUE);
@@ -132,26 +132,26 @@ public abstract class AbstractSheetTest{
 		Assert.assertNotSame(new BooleanValue(Boolean.FALSE), this.sheet.getValueAt(2, 2));
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testGetSheetIndex() {
 		checkProperties();
 		Assert.assertEquals(this.sheetIndex.intValue(), this.sheet.getSheetIndex());
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testGetSheetName() {
 		checkProperties();
 		Assert.assertEquals(this.sheetName, this.sheet.getSheetName());
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testEquals() {
 		checkProperties();
 		Assert.assertTrue(this.sheet.equals(this.sheet));
 		Assert.assertFalse(this.sheet.equals(this.otherSheet));
 	}
 
-	@Test
+    @Test(timeout = 10000)
 	public void testHashCode() {
 		checkProperties();
 		Assert.assertEquals(this.sheet.hashCode(), this.sheet.hashCode());
