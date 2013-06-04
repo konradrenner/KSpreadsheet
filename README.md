@@ -1,4 +1,4 @@
 KSpreadsheet
 ============
 
-Abstraction layer for spreadsheet libraries (poi, odf)
+Abstraction layer for spreadsheet libraries (poi (MS Excel), odfdom (OpenDocument Spreadsheet)).
