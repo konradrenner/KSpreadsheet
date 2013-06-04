@@ -51,7 +51,7 @@
                   <systemProperties>
                       <property>
                           <name>path_to_spreadsheets</name>
-                          <value>/path</value>
+                          <value>/home/koni/Programmieren/Sources/JavaSE_Projects/KSpreadsheet/testdata/</value>
                       </property>
                   </systemProperties>
               </configuration>
