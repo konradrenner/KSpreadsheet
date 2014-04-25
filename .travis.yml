@@ -4,14 +4,14 @@ env:
   global:
    # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
    #   via the "travis encrypt" command using the project repo's public key
-   - secure: ""
+   - secure: "HD31agNVLOrqWNdsmOkZNoyWnnAeaXP93dPdjmaGOw+aRDaGW4+vdxYfTO632rZUpguHoH7fWhAGu8XfEZ1r8Erm2md5jclCyhtWUOTX6GCkRaMCqy3ATwV4GtGsgyXoT3R2v8EpxWG1TlLNZOKrMXnh3uymLkabQXSekA+7N2E="
 
 addons:
   coverity_scan:
     project:
-      name: "konradrenner/stammdaten"
+      name: "konradrenner/KSpreadsheet"
       description: "Your project description here"
     notification_email: koni.renner@gmail.com
     build_command_prepend:
     build_command:
-    branch_pattern: coverity_scan
+    branch_pattern:
