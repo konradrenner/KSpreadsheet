@@ -49,12 +49,6 @@
               <artifactId>maven-surefire-plugin</artifactId>
               <version>2.10</version>
               <configuration>
-                  <systemProperties>
-                      <property>
-                          <name>path_to_spreadsheets</name>
-                          <value>/home/koni/Programmieren/Sources/JavaSE_Projects/KSpreadsheet/testdata/</value>
-                      </property>
-                  </systemProperties>
               </configuration>
           </plugin>
       </plugins>
