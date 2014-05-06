@@ -35,42 +35,64 @@ import org.odftoolkit.odfdom.doc.OdfSpreadsheetDocument;
 public final class SpreadsheetFactory {
 	
 	public enum SpreadsheetType implements Spreadsheet{
-		EXCEL{
+            EXCEL {
 
-			@Override
-			public Workbook createWorkbook(String name) throws Exception {
-				return new ExcelWorkbook(name,new HSSFWorkbook());
-			}
+                    @Override
+                public Workbook createWorkbook(String name) throws Exception {
+                    return new ExcelWorkbook(name, new HSSFWorkbook());
+                }
 
-			@SuppressWarnings("synthetic-access")
-			@Override
-			public Workbook openWorkbook(String name,InputStream stream) throws IOException {
-				return openExcelWorkbook(name,stream);
-			}
-			
-		},OOXML{
-			@Override
-			public Workbook createWorkbook(String name) throws Exception {
-				return new OOXMLWorkbook(name,new XSSFWorkbook());
-			}
+                @SuppressWarnings("synthetic-access")
+                @Override
+                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
+                    return openExcelWorkbook(name, stream);
+                }
 
-			@SuppressWarnings("synthetic-access")
-			@Override
-			public Workbook openWorkbook(String name,InputStream stream) throws IOException {
-				return openOOXMLWorkbook(name,stream);
-			}
-		},OPENDOCUMENT{
-			@Override
-			public Workbook createWorkbook(String name) throws Exception {
-				return new OpenDocumentWorkbook(name,OdfSpreadsheetDocument.newSpreadsheetDocument());
-			}
+            }, OOXML {
+                @Override
+                public Workbook createWorkbook(String name) throws Exception {
+                    return new OOXMLWorkbook(name, new XSSFWorkbook());
+                }
 
-			@SuppressWarnings("synthetic-access")
-			@Override
-			public Workbook openWorkbook(String name,InputStream stream) throws IOException {
-				return openOpenDocumentWorkbook(name,stream);
-			}
-		};
+                @SuppressWarnings("synthetic-access")
+                @Override
+                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
+                    return openOOXMLWorkbook(name, stream);
+                }
+            }, OPENDOCUMENT {
+                @Override
+                public Workbook createWorkbook(String name) throws Exception {
+                    return new OpenDocumentWorkbook(name, OdfSpreadsheetDocument.newSpreadsheetDocument());
+                }
+
+                    @SuppressWarnings("synthetic-access")
+                    @Override
+                    public Workbook openWorkbook(String name, InputStream stream) throws IOException {
+                        return openOpenDocumentWorkbook(name, stream);
+                    }
+            }, CSV_COMMA {
+                @Override
+                public Workbook createWorkbook(String name) throws Exception {
+                    throw new UnsupportedOperationException("not yet implemented");
+                }
+
+                @SuppressWarnings("synthetic-access")
+                @Override
+                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
+                    throw new UnsupportedOperationException("not yet implemented");
+                }
+            }, CSV_SEMICOLON {
+                @Override
+                public Workbook createWorkbook(String name) throws Exception {
+                    throw new UnsupportedOperationException("not yet implemented");
+                }
+
+                @SuppressWarnings("synthetic-access")
+                @Override
+                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
+                    throw new UnsupportedOperationException("not yet implemented");
+                }
+            };
 	}
 
 	/**
