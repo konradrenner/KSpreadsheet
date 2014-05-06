@@ -30,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="3.11.0-19-generic"/>
+    <property name="os.version" value="3.11.0-20-generic"/>
     <property name="user.home" value="/home/koni"/>
     <property name="user.timezone" value="Europe/Vienna"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -60,12 +60,12 @@
   </properties>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testGetType"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsBoolean"/>
-  <testcase time="0.002" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDate"/>
-  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDateString"/>
-  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDouble"/>
-  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsTime"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDate"/>
+  <testcase time="0.004" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDateString"/>
+  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDouble"/>
+  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsTime"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsString"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testHashCode"/>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testEqualsObject"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testGetFormula"/>
+  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testEqualsObject"/>
 </testsuite>

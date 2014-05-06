@@ -19,7 +19,6 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.sql.Time;
 import java.util.Date;
-
 import org.kopsox.spreadsheet.data.Value;
 
 /**
@@ -52,7 +51,7 @@ public final class BlankValue extends AbstractValue {
 	 */
 	@Override
 	public Boolean asBoolean() {
-		return null;
+            return Boolean.FALSE;
 	}
 
 	/* (non-Javadoc)
@@ -95,9 +94,7 @@ public final class BlankValue extends AbstractValue {
 
 	@Override
 	public String toString() {
-		
-		
-		return Value.Type.BLANK.toString();
+            return Value.Type.BLANK.toString() + " " + super.toString();
 	}
 
 	

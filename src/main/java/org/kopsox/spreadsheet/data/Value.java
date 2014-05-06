@@ -76,8 +76,9 @@ public interface Value extends Serializable {
     public Double asDouble();
     
     /**
-     * If possible to convert, this method returns the Boolean-Representation of this value (null if the value cannot be converted)
-     * 
+     * If possible to convert, this method returns the Boolean-Representation of
+     * this value (FALSE if the value cannot be converted)
+      * 
      * @return Boolean
      */
     public Boolean asBoolean();

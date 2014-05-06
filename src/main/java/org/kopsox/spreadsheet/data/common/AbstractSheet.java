@@ -19,7 +19,7 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.Objects;
 import org.kopsox.spreadsheet.data.Sheet;
 import org.kopsox.spreadsheet.data.Workbook;
 
@@ -36,11 +36,13 @@ public abstract class AbstractSheet implements Sheet {
   //For merged regions
 	protected final Map<CellRegion, CellRegion> regions;
 	
-	public AbstractSheet(final Workbook workbook, final String nam,final int idx) {
-		this.name = nam;
-		this.index = idx;
-		this.workbook = workbook;
-		this.regions = new HashMap<AbstractSheet.CellRegion, AbstractSheet.CellRegion>();
+    public AbstractSheet(final Workbook workbook, final String nam, final int idx) {
+        Objects.requireNonNull(workbook, "Sheet must belong to a workbook");
+
+        this.name = nam;
+        this.index = idx;
+        this.workbook = workbook;
+        this.regions = new HashMap<AbstractSheet.CellRegion, AbstractSheet.CellRegion>();
 	}
 	
 	

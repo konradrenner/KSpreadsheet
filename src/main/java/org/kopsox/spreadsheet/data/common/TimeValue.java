@@ -19,7 +19,7 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.sql.Time;
 import java.util.Date;
-
+import java.util.Objects;
 import org.kopsox.spreadsheet.data.Value;
 
 /**
@@ -37,7 +37,8 @@ public final class TimeValue extends AbstractValue {
 	}
 	
 	public TimeValue(final Time v,final String f) {
-		super(f);
+            super(f);
+            Objects.requireNonNull(v, "value must not be null, or use BlankValue class instead");
 		this.value = v;
 	}
 

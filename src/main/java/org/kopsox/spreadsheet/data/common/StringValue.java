@@ -22,7 +22,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.util.Objects;
 import org.kopsox.spreadsheet.data.Value;
 
 /**
@@ -41,9 +41,10 @@ public final class StringValue extends AbstractValue {
 	}
 	
 	public StringValue(final String value,final String formula) {
-		super(formula);
-		this.value = value;
-		this.dateFormat = "dd-MM-yyyy";
+            super(formula);
+            Objects.requireNonNull(value, "value must not be null, or use BlankValue class instead");
+            this.value = value;
+            this.dateFormat = "dd-MM-yyyy";
 	}
 	
 
@@ -77,7 +78,7 @@ public final class StringValue extends AbstractValue {
 	@Override
 	public Boolean asBoolean() {
 		if(this.value == null) {
-			return null;
+                    return Boolean.FALSE;
 		}
 		
 		return Boolean.valueOf(this.value);

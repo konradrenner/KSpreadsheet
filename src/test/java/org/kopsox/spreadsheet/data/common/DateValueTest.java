@@ -28,7 +28,7 @@ public class DateValueTest extends AbstractValueTest {
 
 	@Test
 	public void testAsBoolean() {
-		assertNull(primaryValue.asBoolean());
+            assertFalse(primaryValue.asBoolean());
 	}
 
 	@Test

@@ -19,7 +19,7 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.sql.Time;
 import java.util.Date;
-
+import java.util.Objects;
 import org.kopsox.spreadsheet.data.Value;
 
 /**
@@ -37,8 +37,9 @@ public final class DateValue extends AbstractValue {
 	}
 	
 	public DateValue(final Date v,final String f) {
-		super(f);
-		this.value = v;
+            super(f);
+            Objects.requireNonNull(v, "value must not be null, or use BlankValue class instead");
+            this.value = v;
 	}
 
 
@@ -55,7 +56,7 @@ public final class DateValue extends AbstractValue {
 	 */
 	@Override
 	public Boolean asBoolean() {
-		return null;
+            return Boolean.FALSE;
 	}
 
 	/* (non-Javadoc)
