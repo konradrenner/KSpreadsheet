@@ -29,9 +29,9 @@ import org.kopsox.spreadsheet.data.Workbook;
  */
 public abstract class AbstractSheet implements Sheet {
 
-	private final Workbook workbook;
-	private String name;
-	private int index;
+    protected final Workbook workbook;
+    private String name;
+    private int index;
    
   //For merged regions
 	protected final Map<CellRegion, CellRegion> regions;

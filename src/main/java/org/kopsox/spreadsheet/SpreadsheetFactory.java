@@ -22,6 +22,8 @@ import java.io.InputStream;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.kopsox.spreadsheet.data.Workbook;
+import org.kopsox.spreadsheet.data.csv.CSVWorkbook;
+import org.kopsox.spreadsheet.data.csv.SeparatorStrategy;
 import org.kopsox.spreadsheet.data.excel.ExcelWorkbook;
 import org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbook;
 import org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbook;
@@ -37,7 +39,7 @@ public final class SpreadsheetFactory {
 	public enum SpreadsheetType implements Spreadsheet{
             EXCEL {
 
-                    @Override
+                @Override
                 public Workbook createWorkbook(String name) throws Exception {
                     return new ExcelWorkbook(name, new HSSFWorkbook());
                 }
@@ -73,24 +75,24 @@ public final class SpreadsheetFactory {
             }, CSV_COMMA {
                 @Override
                 public Workbook createWorkbook(String name) throws Exception {
-                    throw new UnsupportedOperationException("not yet implemented");
+                    return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer());
                 }
 
                 @SuppressWarnings("synthetic-access")
                 @Override
                 public Workbook openWorkbook(String name, InputStream stream) throws IOException {
-                    throw new UnsupportedOperationException("not yet implemented");
+                    return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer(stream));
                 }
             }, CSV_SEMICOLON {
                 @Override
                 public Workbook createWorkbook(String name) throws Exception {
-                    throw new UnsupportedOperationException("not yet implemented");
+                    return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer());
                 }
 
                 @SuppressWarnings("synthetic-access")
                 @Override
                 public Workbook openWorkbook(String name, InputStream stream) throws IOException {
-                    throw new UnsupportedOperationException("not yet implemented");
+                    return new CSVWorkbook(name, SeparatorStrategy.SEMICOLON.createInitializer(stream));
                 }
             };
 	}

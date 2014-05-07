@@ -19,6 +19,7 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.sql.Time;
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -89,19 +90,22 @@ public final class StringValue extends AbstractValue {
 	 */
 	@Override
 	public Date asDate() {
-		if(this.value == null) {
-			return null;
-		}
-		
-		DateFormat format = new SimpleDateFormat(dateFormat);
-		
-		try {
-			return format.parse(this.value);
-		} catch (ParseException e) {
-			//return null
-		}
-		
-		return null;
+            if (this.value == null) {
+                return null;
+            }
+
+            try {
+                return DateFormat.getInstance().parse(this.value);
+            } catch (ParseException e) {
+                try {
+                    DateFormat format = new SimpleDateFormat(dateFormat);
+                    return format.parse(this.value);
+                } catch (ParseException ex) {
+                    //nothing
+                }
+            }
+
+            return null;
 	}
 
 	/* (non-Javadoc)
@@ -109,16 +113,20 @@ public final class StringValue extends AbstractValue {
 	 */
 	@Override
 	public Double asDouble() {
-		if(this.value == null) {
-			return null;
-		}
-		
-		try {
-			return Double.valueOf(this.value);
-		}catch(NumberFormatException e) {
-			//return null
-		}
-		return null;
+            if (this.value == null) {
+                return null;
+            }
+
+            try {
+                return Double.valueOf(this.value);
+            } catch (NumberFormatException e) {
+                try {
+                    return NumberFormat.getInstance().parse(this.value).doubleValue();
+                } catch (ParseException ex) {
+                    //nothing
+                }
+            }
+            return null;
 	}
 
 	/* (non-Javadoc)
