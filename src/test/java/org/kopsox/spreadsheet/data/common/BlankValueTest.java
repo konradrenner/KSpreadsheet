@@ -46,7 +46,7 @@ public class BlankValueTest extends AbstractValueTest {
 
 	@Test
 	public void testAsString() {
-		assertNull(primaryValue.asString());
+            assertEquals("", primaryValue.asString());
 	}
 
 }

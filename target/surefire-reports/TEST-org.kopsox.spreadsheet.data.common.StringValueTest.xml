@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.013" errors="0" skipped="0" tests="10" name="org.kopsox.spreadsheet.data.common.StringValueTest">
+<testsuite failures="0" time="0.01" errors="0" skipped="0" tests="10" name="org.kopsox.spreadsheet.data.common.StringValueTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/koni/bin/jdk1.7.0_21/jre/lib/amd64"/>
@@ -60,11 +60,11 @@
   </properties>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testGetType"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsBoolean"/>
-  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDate"/>
-  <testcase time="0.004" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDateString"/>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDouble"/>
+  <testcase time="0.002" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDate"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDateString"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsDouble"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsTime"/>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsString"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testAsString"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testHashCode"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testGetFormula"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.StringValueTest" name="testEqualsObject"/>

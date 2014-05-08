@@ -58,12 +58,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testGetType"/>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsBoolean"/>
-  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsDate"/>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsDateString"/>
+  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testGetType"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsBoolean"/>
+  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsDate"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsDateString"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsDouble"/>
-  <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsTime"/>
+  <testcase time="0.001" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsTime"/>
   <testcase time="0.003" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testAsString"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testHashCode"/>
   <testcase time="0" classname="org.kopsox.spreadsheet.data.common.DateValueTest" name="testGetFormula"/>

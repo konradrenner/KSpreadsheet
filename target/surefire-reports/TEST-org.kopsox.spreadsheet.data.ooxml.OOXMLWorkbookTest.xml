@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.109" errors="0" skipped="0" tests="10" name="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest">
+<testsuite failures="0" time="1.132" errors="0" skipped="0" tests="10" name="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/koni/bin/jdk1.7.0_21/jre/lib/amd64"/>
@@ -58,14 +58,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.735" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testSave"/>
-  <testcase time="0.085" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testEquals"/>
-  <testcase time="0.041" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testHashCode"/>
-  <testcase time="0.065" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testCreateNewSheet"/>
+  <testcase time="0.732" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testSave"/>
+  <testcase time="0.08" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testEquals"/>
+  <testcase time="0.035" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testHashCode"/>
+  <testcase time="0.047" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testGetSheetByIndex"/>
+  <testcase time="0.036" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testSetSelectedSheet"/>
+  <testcase time="0.056" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testCreateNewSheet"/>
   <testcase time="0.029" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testCreateNewSheetString"/>
   <testcase time="0.031" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testGetNumberOfSheets"/>
-  <testcase time="0.032" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testGetSelectedSheetIndex"/>
-  <testcase time="0.024" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testGetSheetByName"/>
-  <testcase time="0.037" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testGetSheetByIndex"/>
-  <testcase time="0.024" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testSetSelectedSheet"/>
+  <testcase time="0.048" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testGetSelectedSheetIndex"/>
+  <testcase time="0.029" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbookTest" name="testGetSheetByName"/>
 </testsuite>

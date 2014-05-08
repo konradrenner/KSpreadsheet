@@ -43,15 +43,46 @@ public class CSVSheet extends AbstractSheet {
 
     public CSVSheet(CSVWorkbook workbook, String nam, int idx) {
         super(workbook, nam, idx);
-        values = new TreeMap<CellID, Value>();
+        values = new TreeMap<>();
         absoluteLastColumnIndex = 0;
+    }
+
+    int getAbsoluteLastColumnIndex() {
+        return absoluteLastColumnIndex;
+    }
+
+    void setAbsoluteLastColumnIndex(int absoluteLastColumnIndex) {
+        this.absoluteLastColumnIndex = absoluteLastColumnIndex;
+    }
+
+
+    @Override
+    public String toString() {
+        return "CSVSheet{" + "values=" + values + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CSVSheet other = (CSVSheet) obj;
+        return true;
     }
 
     @Override
     public CSVWorkbook getWorkbook() {
         return (CSVWorkbook) super.workbook; //To change body of generated methods, choose Tools | Templates.
     }
-
+    @Override
     public Value getValueAt(int row, int column) {
         CellID id = new CellID(row, column);
         Value value = values.get(id);
@@ -71,63 +102,63 @@ public class CSVSheet extends AbstractSheet {
             this.absoluteLastColumnIndex = id.getColumn();
         }
     }
-
+    @Override
     public void setValueAt(int row, int column, String value) {
         Value val = value == null ? new BlankValue() : new StringValue(value);
         
         setValueAt(new CellID(row, column), val);
     }
-
+    @Override
     public void setValueAt(int row, int column, double value) {
         Value val = new StringValue(NumberFormat.getInstance().format(value));
 
         setValueAt(new CellID(row, column), val);
     }
-
+    @Override
     public void setValueAt(int row, int column, Date value, String dateFormat) {
         DateFormat format = dateFormat == null ? DateFormat.getDateInstance() : new SimpleDateFormat(dateFormat);
         Value val = value == null ? new BlankValue() : new StringValue(format.format(value));
         
         setValueAt(new CellID(row, column), val);
     }
-
+    @Override
     public void setValueAt(int row, int column, Time value, String timeFormat) {
         DateFormat format = timeFormat == null ? DateFormat.getTimeInstance() : new SimpleDateFormat(timeFormat);
         Value val = value == null ? new BlankValue() : new StringValue(format.format(value));
 
         setValueAt(new CellID(row, column), val);
     }
-
+    @Override
     public void setValueAt(int row, int column, boolean value) {
         setValueAt(new CellID(row, column), new StringValue(Boolean.toString(value)));
     }
-
+    @Override
     public void setFormualaAt(int row, int column, String formula) {
         throw new UnsupportedOperationException("Not supported for CSV Sheet");
     }
-
+    @Override
     public int getNumberOfLastRow() {
         return this.values.lastKey().getRow();
     }
-
+    @Override
     public int getNumberOfLastColumn(int row) {
         SortedMap<CellID, Value> subMap = this.values.subMap(new CellID(row, 0), new CellID(row + 1, 0));
 
         return subMap.lastKey().getColumn();
     }
-
+    @Override
     public void mergeRegion(int firstRow, int lastRow, int firstColumn, int lastColumn) {
         throw new UnsupportedOperationException("Not supported for CSV Sheet");
     }
-
+    @Override
     public void umergeRegion(int firstRow, int lastRow, int firstColumn, int lastColumn) {
         throw new UnsupportedOperationException("Not supported for CSV Sheet");
     }
-
+    @Override
     public void autoSizeColumn(int column) {
         throw new UnsupportedOperationException("Not supported for CSV Sheet");
     }
-
+    @Override
     public void setStyleAt(int row, int column, CellStyle style) {
         throw new UnsupportedOperationException("Not supported for CSV Sheet");
     }

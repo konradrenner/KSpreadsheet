@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.433" errors="0" skipped="0" tests="14" name="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest">
+<testsuite failures="0" time="0.443" errors="0" skipped="0" tests="14" name="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/koni/bin/jdk1.7.0_21/jre/lib/amd64"/>
@@ -58,18 +58,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.032" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetWorkbook"/>
-  <testcase time="0.033" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetNumberOfLastColumn"/>
-  <testcase time="0.033" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetNumberOfLastRow"/>
-  <testcase time="0.043" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetValueAt"/>
-  <testcase time="0.047" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetFormualaAt"/>
-  <testcase time="0.036" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntString"/>
-  <testcase time="0.031" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntDouble"/>
-  <testcase time="0.033" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntDate"/>
-  <testcase time="0.03" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntTime"/>
-  <testcase time="0.026" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntBoolean"/>
-  <testcase time="0.022" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetSheetIndex"/>
-  <testcase time="0.023" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetSheetName"/>
-  <testcase time="0.017" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testEquals"/>
-  <testcase time="0.018" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testHashCode"/>
+  <testcase time="0.037" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetWorkbook"/>
+  <testcase time="0.032" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetNumberOfLastColumn"/>
+  <testcase time="0.036" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetNumberOfLastRow"/>
+  <testcase time="0.044" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetValueAt"/>
+  <testcase time="0.045" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetFormualaAt"/>
+  <testcase time="0.04" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntString"/>
+  <testcase time="0.035" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntDouble"/>
+  <testcase time="0.026" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntDate"/>
+  <testcase time="0.034" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntTime"/>
+  <testcase time="0.028" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testSetValueAtIntIntBoolean"/>
+  <testcase time="0.025" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetSheetIndex"/>
+  <testcase time="0.02" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testGetSheetName"/>
+  <testcase time="0.015" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testEquals"/>
+  <testcase time="0.015" classname="org.kopsox.spreadsheet.data.ooxml.OOXMLSheetTest" name="testHashCode"/>
 </testsuite>

@@ -18,8 +18,10 @@
  */
 package org.kopsox.spreadsheet.data.csv;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import org.kopsox.spreadsheet.data.Sheet;
 import org.kopsox.spreadsheet.data.common.AbstractWorkbook;
 
@@ -36,7 +38,7 @@ public class CSVWorkbook extends AbstractWorkbook {
         super(name);
         this.separator = init.getStrategy();
         CSVSheet aSheet = new CSVSheet(this, name, 0);
-        boolean done = init.init(sheet);
+        boolean done = init.init(aSheet);
         if (done) {
             this.sheet = aSheet;
         }
@@ -46,6 +48,29 @@ public class CSVWorkbook extends AbstractWorkbook {
         return separator;
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final CSVWorkbook other = (CSVWorkbook) obj;
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "CSVWorkbook{" + "separator=" + separator + ", sheet=" + sheet + '}';
+    }
+
+    @Override
     public Sheet createNewSheet() {
         if (this.sheet == null) {
             this.sheet = new CSVSheet(this, "sheet", 0);
@@ -53,7 +78,7 @@ public class CSVWorkbook extends AbstractWorkbook {
         }
         throw new IllegalStateException("Workbook contains already a sheet");
     }
-
+    @Override
     public Sheet createNewSheet(String name) {
         if (this.sheet == null) {
             this.sheet = new CSVSheet(this, "name", 0);
@@ -61,28 +86,51 @@ public class CSVWorkbook extends AbstractWorkbook {
         }
         throw new IllegalStateException("Workbook contains already a sheet");
     }
-
+    @Override
     public Sheet getSheetByName(String name) {
         return this.sheet;
     }
-
+    @Override
     public Sheet getSheetByIndex(int number) {
         return this.sheet;
     }
-
+    @Override
     public int getNumberOfSheets() {
         return 1;
     }
-
+    @Override
     public int getSelectedSheetIndex() {
         return 0;
     }
-
+    @Override
     public void setSelectedSheet(int index) {
         throw new UnsupportedOperationException("Not supported yet for CSV");
     }
-
+    @Override
     public void save(OutputStream stream) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (this.sheet == null) {
+            throw new IllegalStateException("No sheet created");
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stream))) {
+            int rows = this.sheet.getNumberOfLastRow();
+            int maxColumns = this.sheet.getAbsoluteLastColumnIndex();
+
+            for (int i = 0; i < rows; i++) {
+                StringBuilder row = new StringBuilder();
+                for (int x = 0; x < maxColumns; x++) {
+                    row.append(this.sheet.getValueAt(i, x).asString());
+
+                    if ((x + 1) < maxColumns) {
+                        row.append(this.separator.getSymbol());
+                    }
+                }
+
+                writer.append(row);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
     }
 }

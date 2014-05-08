@@ -85,15 +85,24 @@ public enum SeparatorStrategy {
 
                 String line;
                 int rowNumber = 0;
+                int columnIndex = 0;
                 while ((line = reader.readLine()) != null) {
                     String[] split = line.split(strategy.getSymbol());
 
+                    if (split == null || split.length == 0) {
+                        break;
+                    }
+                    if (split.length > columnIndex) {
+                        columnIndex = split.length;
+                    }
+                    
                     for (int i = 0; i < split.length; i++) {
                         sheet.setValueAt(new CSVSheet.CellID(rowNumber, i), new StringValue(split[i]));
                     }
 
                     rowNumber++;
                 }
+                sheet.setAbsoluteLastColumnIndex(columnIndex);
             } catch (IOException ex) {
                 throw new IllegalStateException(ex);
             }

@@ -88,7 +88,7 @@ public final class BlankValue extends AbstractValue {
 
 	@Override
 	public String asString() {
-		return null;
+            return "";
 	}
 
 
