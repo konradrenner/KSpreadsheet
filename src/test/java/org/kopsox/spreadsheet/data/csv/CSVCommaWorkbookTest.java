@@ -18,67 +18,27 @@
  */
 package org.kopsox.spreadsheet.data.csv;
 
+import java.io.InputStream;
 import org.junit.Before;
-import org.junit.Test;
+import org.kopsox.spreadsheet.SpreadsheetFactory;
+import org.kopsox.spreadsheet.TestUtil;
 
 /**
  *
  * @author Konrad Renner
  */
-public class CSVWorkbookTest {
-
-    public CSVWorkbookTest() {
-    }
+public class CSVCommaWorkbookTest extends AbstractCSVWorkbookTest {
 
     @Before
-    public void setUp() {
+    @Override
+    public void setUp() throws Exception {
+        try (InputStream stream = TestUtil.getSpreadSheetStrean("csv_test_comma.csv")) {
+            workbook = (CSVWorkbook) SpreadsheetFactory.SpreadsheetType.CSV_COMMA.openWorkbook("name", stream);
+        }
     }
 
-    @Test
-    public void testGetSeparator() {
-    }
-
-    @Test
-    public void testHashCode() {
-    }
-
-    @Test
-    public void testEquals() {
-    }
-
-    @Test
-    public void testToString() {
-    }
-
-    @Test
-    public void testCreateNewSheet_0args() {
-    }
-
-    @Test
-    public void testCreateNewSheet_String() {
-    }
-
-    @Test
-    public void testGetSheetByName() {
-    }
-
-    @Test
-    public void testGetSheetByIndex() {
-    }
-
-    @Test
-    public void testGetNumberOfSheets() {
-    }
-
-    @Test
-    public void testGetSelectedSheetIndex() {
-    }
-
-    @Test
-    public void testSetSelectedSheet() {
-    }
-
-    @Test
-    public void testSave() throws Exception {
+    @Override
+    public SeparatorStrategy getSeparator() {
+        return SeparatorStrategy.COMMA;
     }
 }

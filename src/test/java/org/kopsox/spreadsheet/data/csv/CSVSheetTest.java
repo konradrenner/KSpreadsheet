@@ -42,7 +42,7 @@ public class CSVSheetTest {
     public void setUp() throws Exception {
         Workbook workbook;
         try (InputStream stream = TestUtil.getSpreadSheetStrean("csv_test_comma.csv")) {
-            workbook = SpreadsheetFactory.openWorkbook("name", stream, SpreadsheetFactory.SpreadsheetType.CSV_COMMA);
+            workbook = SpreadsheetFactory.SpreadsheetType.CSV_COMMA.openWorkbook("name", stream);
         }
         this.sheet = (CSVSheet) workbook.getSheetByIndex(0);
     }

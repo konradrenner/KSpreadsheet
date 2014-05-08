@@ -96,10 +96,16 @@ public class CSVWorkbook extends AbstractWorkbook {
     }
     @Override
     public int getNumberOfSheets() {
+        if (this.sheet == null) {
+            return 0;
+        }
         return 1;
     }
     @Override
     public int getSelectedSheetIndex() {
+        if (this.sheet == null) {
+            return -1;
+        }
         return 0;
     }
     @Override

@@ -36,105 +36,109 @@ import org.odftoolkit.odfdom.doc.OdfSpreadsheetDocument;
  */
 public final class SpreadsheetFactory {
 	
-	public enum SpreadsheetType implements Spreadsheet{
-            EXCEL {
+    public enum SpreadsheetType implements Spreadsheet {
+        EXCEL {
 
-                @Override
-                public Workbook createWorkbook(String name) throws Exception {
-                    return new ExcelWorkbook(name, new HSSFWorkbook());
-                }
+            @Override
+            public ExcelWorkbook createWorkbook(String name) throws Exception {
+                return new ExcelWorkbook(name, new HSSFWorkbook());
+            }
 
-                @SuppressWarnings("synthetic-access")
-                @Override
-                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
-                    return openExcelWorkbook(name, stream);
-                }
+            @SuppressWarnings("synthetic-access")
+            @Override
+            public ExcelWorkbook openWorkbook(String name, InputStream stream) throws IOException {
+                return openExcelWorkbook(name, stream);
+            }
 
-            }, OOXML {
-                @Override
-                public Workbook createWorkbook(String name) throws Exception {
-                    return new OOXMLWorkbook(name, new XSSFWorkbook());
-                }
+        }, OOXML {
+            @Override
+                public OOXMLWorkbook createWorkbook(String name) throws Exception {
+                return new OOXMLWorkbook(name, new XSSFWorkbook());
+            }
 
-                @SuppressWarnings("synthetic-access")
-                @Override
-                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
-                    return openOOXMLWorkbook(name, stream);
-                }
-            }, OPENDOCUMENT {
-                @Override
-                public Workbook createWorkbook(String name) throws Exception {
-                    return new OpenDocumentWorkbook(name, OdfSpreadsheetDocument.newSpreadsheetDocument());
-                }
-
-                    @SuppressWarnings("synthetic-access")
-                    @Override
-                    public Workbook openWorkbook(String name, InputStream stream) throws IOException {
-                        return openOpenDocumentWorkbook(name, stream);
-                    }
-            }, CSV_COMMA {
-                @Override
-                public Workbook createWorkbook(String name) throws Exception {
-                    return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer());
-                }
+            @SuppressWarnings("synthetic-access")
+            @Override
+                public OOXMLWorkbook openWorkbook(String name, InputStream stream) throws IOException {
+                return openOOXMLWorkbook(name, stream);
+            }
+        }, OPENDOCUMENT {
+            @Override
+                public OpenDocumentWorkbook createWorkbook(String name) throws Exception {
+                return new OpenDocumentWorkbook(name, OdfSpreadsheetDocument.newSpreadsheetDocument());
+            }
 
                 @SuppressWarnings("synthetic-access")
                 @Override
-                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
-                    return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer(stream));
+                public OpenDocumentWorkbook openWorkbook(String name, InputStream stream) throws IOException {
+                    return openOpenDocumentWorkbook(name, stream);
                 }
-            }, CSV_SEMICOLON {
-                @Override
-                public Workbook createWorkbook(String name) throws Exception {
-                    return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer());
-                }
+        }, CSV_COMMA {
+            @Override
+                public CSVWorkbook createWorkbook(String name) throws Exception {
+                return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer());
+            }
 
-                @SuppressWarnings("synthetic-access")
-                @Override
-                public Workbook openWorkbook(String name, InputStream stream) throws IOException {
-                    return new CSVWorkbook(name, SeparatorStrategy.SEMICOLON.createInitializer(stream));
-                }
-            };
-	}
+            @SuppressWarnings("synthetic-access")
+            @Override
+                public CSVWorkbook openWorkbook(String name, InputStream stream) throws IOException {
+                return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer(stream));
+            }
+        }, CSV_SEMICOLON {
+            @Override
+                public CSVWorkbook createWorkbook(String name) throws Exception {
+                return new CSVWorkbook(name, SeparatorStrategy.COMMA.createInitializer());
+            }
 
-	/**
-	 * Opens a Spreadsheet-Workbook depending on the Spreadsheet(-Type).<br>
-	 * You can use your own implementation of Spreadsheet, or use one of the built in Spreasheet-Types
-	 * @param name 
-	 * @param str
-	 * @param spreadSheet
-	 * @return Workbook
-	 * @throws IOException 
-	 */
-	public static Workbook openWorkbook(String name,InputStream str,Spreadsheet spreadSheet) throws IOException {
-		return spreadSheet.openWorkbook(name,str);
-	}
+            @SuppressWarnings("synthetic-access")
+            @Override
+                public CSVWorkbook openWorkbook(String name, InputStream stream) throws IOException {
+                return new CSVWorkbook(name, SeparatorStrategy.SEMICOLON.createInitializer(stream));
+            }
+        };
+    }
+
+    /**
+     * Opens a Spreadsheet-Workbook depending on the Spreadsheet(-Type).<br>
+     * You can use your own implementation of Spreadsheet, or use one of the
+     * built in Spreasheet-Types
+     *
+     * @param name
+     * @param str
+     * @param spreadSheet
+     * @return Workbook
+     * @throws IOException
+     */
+    public static Workbook openWorkbook(String name, InputStream str, Spreadsheet spreadSheet) throws IOException {
+        return spreadSheet.openWorkbook(name, str);
+    }
+
+    /**
+     * Creates a new Spreadsheet-Workbook of the given type.<br>
+     * You can use your own implementation of Spreadsheet, or use one of the
+     * built in Spreasheet-Types
+     *
+     * @param name
+     * @param spreadSheet
+     * @return Workbook
+     * @throws Exception
+     */
+    public static Workbook createWorkbook(String name, Spreadsheet spreadSheet) throws Exception {
+        return spreadSheet.createWorkbook(name);
+    }
 	
-	/**
-	 * Creates a new Spreadsheet-Workbook of the given type.<br>
-	 * You can use your own implementation of Spreadsheet, or use one of the built in Spreasheet-Types
-	 * @param name 
-	 * @param spreadSheet
-	 * @return Workbook
-	 * @throws Exception 
-	 */
-	public static Workbook createWorkbook(String name,Spreadsheet spreadSheet) throws Exception {
-		return spreadSheet.createWorkbook(name);
-	}
+    private static ExcelWorkbook openExcelWorkbook(String name, InputStream str) throws IOException {
+        return new ExcelWorkbook(name, new HSSFWorkbook(str));
+    }
+
+    private static OOXMLWorkbook openOOXMLWorkbook(String name, InputStream str) throws IOException {
+        return new OOXMLWorkbook(name, new XSSFWorkbook(str));
+    }
 	
-	private static Workbook openExcelWorkbook(String name,InputStream str) throws IOException {
-		return new ExcelWorkbook(name,new HSSFWorkbook(str));
-	}
-	
-	private static Workbook openOOXMLWorkbook(String name,InputStream str) throws IOException {
-		return new OOXMLWorkbook(name,new XSSFWorkbook(str));
-	}
-	
-	private static Workbook openOpenDocumentWorkbook(String name,InputStream str) throws IOException {
-		try {
-                    return new OpenDocumentWorkbook(name, (OdfSpreadsheetDocument) OdfSpreadsheetDocument.loadDocument(str));
-		} catch (Exception e) {
-			throw new IOException(e);
-		}
-	}
+    private static OpenDocumentWorkbook openOpenDocumentWorkbook(String name, InputStream str) throws IOException {
+        try {
+                return new OpenDocumentWorkbook(name, (OdfSpreadsheetDocument) OdfSpreadsheetDocument.loadDocument(str));
+        } catch (Exception e) {
+            throw new IOException(e);
+        }
+    }
 }
