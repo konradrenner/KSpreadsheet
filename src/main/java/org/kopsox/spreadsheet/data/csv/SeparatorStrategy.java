@@ -22,6 +22,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import org.kopsox.spreadsheet.data.Value;
+import org.kopsox.spreadsheet.data.common.BlankValue;
 import org.kopsox.spreadsheet.data.common.StringValue;
 
 /**
@@ -85,24 +87,54 @@ public enum SeparatorStrategy {
 
                 String line;
                 int rowNumber = 0;
-                int columnIndex = 0;
-                while ((line = reader.readLine()) != null) {
-                    String[] split = line.split(strategy.getSymbol());
+                int lastColumnIndex = 0;
+                
+                int value;
+                StringBuilder row = new StringBuilder();
+                while ((value = reader.read()) != -1) {
+                    char charvalue = (char) value;
 
-                    if (split == null || split.length == 0) {
-                        break;
-                    }
-                    if (split.length > columnIndex) {
-                        columnIndex = split.length;
+                    if (System.lineSeparator().equalsIgnoreCase(Character.toString(charvalue))) {
+                        StringBuilder column = new StringBuilder();
+                        int i;
+                        int colIndex = 0;
+                        for (i = 0; i < row.length(); i++) {
+
+                            if (row.charAt(i) == strategy.getSymbol().charAt(0)) {
+                                Value val;
+                                if (column.length() == 0) {
+                                    val = new BlankValue();
+                                } else {
+                                    val = new StringValue(column.toString());
+                                }
+
+                                sheet.setValueAt(new CSVSheet.CellID(rowNumber, colIndex++), val);
+                                column = new StringBuilder();
+                            } else {
+                                column.append(row.charAt(i));
+                            }
+                        }
+
+                        //If the last column is empty, a BlankValue must be inserted
+                        if (row.charAt(row.length() - 1) == strategy.getSymbol().charAt(0)) {
+                            sheet.setValueAt(new CSVSheet.CellID(rowNumber, colIndex), new BlankValue());
+                        } else {
+                            //The last column is filled with a value
+                            sheet.setValueAt(new CSVSheet.CellID(rowNumber, colIndex), new StringValue(column.toString()));
+                        }
+
+                        if (colIndex > lastColumnIndex) {
+                            lastColumnIndex = colIndex + 1;
+                        }
+                        
+                        row = new StringBuilder();
+                        rowNumber++;
+                    } else {
+                        row.append(charvalue);
                     }
                     
-                    for (int i = 0; i < split.length; i++) {
-                        sheet.setValueAt(new CSVSheet.CellID(rowNumber, i), new StringValue(split[i]));
-                    }
-
-                    rowNumber++;
                 }
-                sheet.setAbsoluteLastColumnIndex(columnIndex);
+                sheet.setAbsoluteLastColumnIndex(lastColumnIndex);
             } catch (IOException ex) {
                 throw new IllegalStateException(ex);
             }

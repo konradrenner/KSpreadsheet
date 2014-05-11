@@ -125,6 +125,7 @@ public class CSVWorkbook extends AbstractWorkbook {
             for (int i = 0; i < rows; i++) {
                 StringBuilder row = new StringBuilder();
                 for (int x = 0; x < maxColumns; x++) {
+                    String value = this.sheet.getValueAt(i, x).asString();
                     row.append(this.sheet.getValueAt(i, x).asString());
 
                     if ((x + 1) < maxColumns) {

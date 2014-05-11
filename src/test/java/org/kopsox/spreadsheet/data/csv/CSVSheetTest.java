@@ -49,7 +49,7 @@ public class CSVSheetTest {
 
     @Test
     public void testGetAbsoluteLastColumnIndex() {
-        assertEquals(19, this.sheet.getAbsoluteLastColumnIndex());
+        assertEquals(3, this.sheet.getAbsoluteLastColumnIndex());
     }
 
     @Test
@@ -59,9 +59,9 @@ public class CSVSheetTest {
         assertEquals(2014, cal.get(Calendar.YEAR));
         assertEquals(Calendar.JANUARY, cal.get(Calendar.MONTH));
         assertEquals(1, cal.get(Calendar.DAY_OF_MONTH));
-        assertEquals("zelle41", this.sheet.getValueAt(4, 1));
+        assertEquals("zelle41", this.sheet.getValueAt(4, 1).asString());
         assertEquals(new BlankValue(), this.sheet.getValueAt(6, 7));
-        assertEquals(0.1, this.sheet.getValueAt(19, 2));
+        assertEquals(new Double(0.1), this.sheet.getValueAt(18, 2).asDouble());
     }
 
     @Test

@@ -98,8 +98,8 @@ public class CSVSheet extends AbstractSheet {
         Objects.requireNonNull(value, "Value must not be null");
 
         this.values.put(id, value);
-        if (id.getColumn() > this.absoluteLastColumnIndex) {
-            this.absoluteLastColumnIndex = id.getColumn();
+        if ((id.getColumn() + 1) > this.absoluteLastColumnIndex) {
+            this.absoluteLastColumnIndex = id.getColumn() + 1;
         }
     }
     @Override
@@ -138,13 +138,13 @@ public class CSVSheet extends AbstractSheet {
     }
     @Override
     public int getNumberOfLastRow() {
-        return this.values.lastKey().getRow();
+        return this.values.lastKey().getRow() + 1;
     }
     @Override
     public int getNumberOfLastColumn(int row) {
         SortedMap<CellID, Value> subMap = this.values.subMap(new CellID(row, 0), new CellID(row + 1, 0));
 
-        return subMap.lastKey().getColumn();
+        return subMap.lastKey().getColumn() + 1;
     }
     @Override
     public void mergeRegion(int firstRow, int lastRow, int firstColumn, int lastColumn) {

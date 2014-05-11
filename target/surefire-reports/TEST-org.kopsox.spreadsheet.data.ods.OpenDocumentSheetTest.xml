@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.242" errors="0" skipped="0" tests="14" name="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest">
+<testsuite failures="0" time="0.259" errors="0" skipped="0" tests="14" name="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/koni/bin/jdk1.7.0_21/jre/lib/amd64"/>
@@ -41,7 +41,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/home/koni/bin/jdk1.7.0_21/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="de"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -58,18 +58,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetWorkbook"/>
-  <testcase time="0.028" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetNumberOfLastColumn"/>
-  <testcase time="0.01" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetNumberOfLastRow"/>
-  <testcase time="0.018" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetValueAt"/>
-  <testcase time="0.013" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetFormualaAt"/>
-  <testcase time="0.013" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntString"/>
-  <testcase time="0.013" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntDouble"/>
+  <testcase time="0.021" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetValueAt"/>
+  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetFormualaAt"/>
+  <testcase time="0.009" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetNumberOfLastRow"/>
+  <testcase time="0.019" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetNumberOfLastColumn"/>
+  <testcase time="0.01" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetWorkbook"/>
+  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntString"/>
+  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntDouble"/>
   <testcase time="0.038" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntDate"/>
-  <testcase time="0.032" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntTime"/>
-  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntBoolean"/>
-  <testcase time="0.012" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetSheetIndex"/>
-  <testcase time="0.01" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetSheetName"/>
-  <testcase time="0.01" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testEquals"/>
-  <testcase time="0.012" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testHashCode"/>
+  <testcase time="0.036" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntTime"/>
+  <testcase time="0.018" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testSetValueAtIntIntBoolean"/>
+  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetSheetIndex"/>
+  <testcase time="0.019" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testGetSheetName"/>
+  <testcase time="0.014" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testEquals"/>
+  <testcase time="0.015" classname="org.kopsox.spreadsheet.data.ods.OpenDocumentSheetTest" name="testHashCode"/>
 </testsuite>
