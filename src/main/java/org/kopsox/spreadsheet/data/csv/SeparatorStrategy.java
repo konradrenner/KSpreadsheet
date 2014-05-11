@@ -67,7 +67,7 @@ public enum SeparatorStrategy {
         return new DefaultInitializer(null, this);
     }
 
-    private class DefaultInitializer implements CSVInitializer {
+    private static class DefaultInitializer implements CSVInitializer {
 
         private final InputStream stream;
         private final SeparatorStrategy strategy;
@@ -83,7 +83,7 @@ public enum SeparatorStrategy {
                 return false;
             }
 
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream))) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"))) {
 
                 String line;
                 int rowNumber = 0;

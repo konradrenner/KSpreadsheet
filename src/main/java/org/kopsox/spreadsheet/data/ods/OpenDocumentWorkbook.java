@@ -19,7 +19,6 @@ package org.kopsox.spreadsheet.data.ods;
 
 import java.io.IOException;
 import java.io.OutputStream;
-
 import org.kopsox.spreadsheet.data.Sheet;
 import org.kopsox.spreadsheet.data.common.AbstractWorkbook;
 import org.odftoolkit.odfdom.doc.OdfSpreadsheetDocument;
@@ -46,7 +45,10 @@ public class OpenDocumentWorkbook extends AbstractWorkbook {
 	 */
 	@Override
 	public Sheet createNewSheet() {
-		OdfTable newSheet = OdfTable.newTable(this.workbook);
+            OdfTable newSheet = OdfTable.newTable(this.workbook);
+            if (newSheet == null) {
+                throw new IllegalStateException("Could not create new OdfTable");
+            }
 		
 		OpenDocumentSheet sheet = new OpenDocumentSheet(this,newSheet,newSheet.getTableName(),this.workbook.getTableList().size()-1);
 		
@@ -59,7 +61,11 @@ public class OpenDocumentWorkbook extends AbstractWorkbook {
 	 */
 	@Override
 	public Sheet createNewSheet(String name) {
-		OdfTable newSheet = OdfTable.newTable(this.workbook);
+            OdfTable newSheet = OdfTable.newTable(this.workbook);
+            if (newSheet == null) {
+                throw new IllegalStateException("Could not create new OdfTable");
+            }
+
 		newSheet.setTableName(name);
 		
 		OpenDocumentSheet sheet = new OpenDocumentSheet(this,newSheet,name,this.workbook.getTableList().size()-1);

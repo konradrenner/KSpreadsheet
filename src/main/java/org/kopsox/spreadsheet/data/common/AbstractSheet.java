@@ -98,64 +98,72 @@ public abstract class AbstractSheet implements Sheet {
 		return true;
 	}
    
-   protected class CellRegion{
-		protected final int startRow;
-		protected final int endRow;
-		protected final int startColumn;
-		protected final int endColumn;
-		
-		//this index is needed for POI-Sheets
-		public final int index;
-		
-		public CellRegion(int sRow,int eRow,int sColumn,int eColumn,int idx){
-			this.startColumn = sColumn;
-			this.startRow = sRow;
-			this.endRow = eRow;
-			this.endColumn = eColumn;
-			this.index = idx;
-		}
-		
-		public CellRegion(int sRow,int eRow,int sColumn,int eColumn){
-			this(sRow,eRow,sColumn,eColumn,-1);
-		}
+    protected static class CellRegion {
 
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + endColumn;
-			result = prime * result + endRow;
-			result = prime * result + startColumn;
-			result = prime * result + startRow;
-			return result;
-		}
+        protected final int startRow;
+        protected final int endRow;
+        protected final int startColumn;
+        protected final int endColumn;
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			CellRegion other = (CellRegion) obj;
-			if (endColumn != other.endColumn)
-				return false;
-			if (endRow != other.endRow)
-				return false;
-			if (startColumn != other.startColumn)
-				return false;
-			if (startRow != other.startRow)
-				return false;
-			return true;
-		}
+       //this index is needed for POI-Sheets
+       public final int index;
 
-		@Override
-		public String toString() {
-			return "CellRegion [startRow=" + startRow + ", endRow=" + endRow
-					+ ", startColumn=" + startColumn + ", endColumn="
-					+ endColumn + "]";
-		}
+       public CellRegion(int sRow, int eRow, int sColumn, int eColumn, int idx) {
+           this.startColumn = sColumn;
+           this.startRow = sRow;
+           this.endRow = eRow;
+           this.endColumn = eColumn;
+           this.index = idx;
+       }
+
+       public CellRegion(int sRow, int eRow, int sColumn, int eColumn) {
+           this(sRow, eRow, sColumn, eColumn, -1);
+       }
+
+       @Override
+       public int hashCode() {
+           final int prime = 31;
+           int result = 1;
+           result = prime * result + endColumn;
+           result = prime * result + endRow;
+           result = prime * result + startColumn;
+           result = prime * result + startRow;
+           return result;
+       }
+
+       @Override
+       public boolean equals(Object obj) {
+           if (this == obj) {
+               return true;
+           }
+           if (obj == null) {
+               return false;
+           }
+           if (getClass() != obj.getClass()) {
+               return false;
+           }
+           CellRegion other = (CellRegion) obj;
+           if (endColumn != other.endColumn) {
+               return false;
+           }
+           if (endRow != other.endRow) {
+               return false;
+           }
+           if (startColumn != other.startColumn) {
+               return false;
+           }
+           if (startRow != other.startRow) {
+               return false;
+           }
+           return true;
+       }
+
+       @Override
+       public String toString() {
+           return "CellRegion [startRow=" + startRow + ", endRow=" + endRow
+                   + ", startColumn=" + startColumn + ", endColumn="
+                   + endColumn + "]";
+       }
 	}
 	
 }

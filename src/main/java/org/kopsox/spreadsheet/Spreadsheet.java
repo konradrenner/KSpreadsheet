@@ -19,14 +19,15 @@ package org.kopsox.spreadsheet;
 
 import java.io.IOException;
 import java.io.InputStream;
-
 import org.kopsox.spreadsheet.SpreadsheetFactory.SpreadsheetType;
 import org.kopsox.spreadsheet.data.Workbook;
 
 /**
- * Interface for all spreadsheets. If you want to use the built in implementations (Excel, OOXML, OpenDocument) choose one of the 
- * types from the enum SpreadsheetType.
- * 
+ * Interface for all spreadsheets. If you want to use the built in
+ * implementations (Excel, OOXML, OpenDocument, CSV) choose one of the types
+ * from the enum SpreadsheetType. Spreadsheet implementations use UTF-8 as
+ * encoding
+  * 
  * @author Konrad Renner
  * @see SpreadsheetType
  */

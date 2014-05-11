@@ -74,7 +74,6 @@ public class CSVSheet extends AbstractSheet {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CSVSheet other = (CSVSheet) obj;
         return true;
     }
 

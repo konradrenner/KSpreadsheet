@@ -56,7 +56,7 @@ public final class TimeValue extends AbstractValue {
 	 */
 	@Override
 	public Boolean asBoolean() {
-		return null;
+            return Boolean.FALSE;
 	}
 
 	/* (non-Javadoc)

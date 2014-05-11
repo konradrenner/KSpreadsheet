@@ -94,117 +94,126 @@ public final class CellStyleBuilder {
 		return new DefaultCellStyle(this.border,this.background,this.foreground,this.font,this.halgin,this.valign);
 	}
 
-	final class DefaultCellStyle implements CellStyle{
+    static final class DefaultCellStyle implements CellStyle {
 		
-		private final CellStyleBorder dborder;
-		private final CellStyleColor dbackground;
-		private final CellStyleColor dforeground;
-		private final CellStyleFont dfont;
-		private final CellStyleHorizontalAlignment dhalgin;
-		private final CellStyleVerticalAlignment dvalign ;
-		
-		DefaultCellStyle(CellStyleBorder border,CellStyleColor background,CellStyleColor foreground,
-				CellStyleFont font,CellStyleHorizontalAlignment halgin,CellStyleVerticalAlignment valign ){
-			
-			this.dborder = border;
-			this.dbackground = background;
-			this.dforeground = foreground;
-			this.dfont = font;
-			this.dhalgin = halgin;
-			this.dvalign = valign;
-		}
-		
-		@Override
-		public String toString() {
-			StringBuilder sb = new StringBuilder();
-			
-			sb.append("DefaultCellStyle[border=");
-			sb.append(dborder);
-			sb.append(", background=");
-			sb.append(dbackground);
-			sb.append(", foreground=");
-			sb.append(dforeground);
-			sb.append(", font=");
-			sb.append(dfont);
-			sb.append(", horziontalalgin=");
-			sb.append(dhalgin);
-			sb.append(", verticalalgin=");
-			sb.append(dvalign);
-			sb.append(']');
-			
-			return sb.toString();
-		}
+        private final CellStyleBorder dborder;
+        private final CellStyleColor dbackground;
+        private final CellStyleColor dforeground;
+        private final CellStyleFont dfont;
+        private final CellStyleHorizontalAlignment dhalgin;
+        private final CellStyleVerticalAlignment dvalign;
 
-		@Override
-		public CellStyleBorder getBorder() {
-			return this.dborder;
-		}
+        DefaultCellStyle(CellStyleBorder border, CellStyleColor background, CellStyleColor foreground,
+                CellStyleFont font, CellStyleHorizontalAlignment halgin, CellStyleVerticalAlignment valign) {
 
-		@Override
-		public CellStyleColor getBackgroundColor() {
-			return this.dbackground;
-		}
+            this.dborder = border;
+            this.dbackground = background;
+            this.dforeground = foreground;
+            this.dfont = font;
+            this.dhalgin = halgin;
+            this.dvalign = valign;
+        }
 
-		@Override
-		public CellStyleColor getForegroundColor() {
-			return this.dforeground;
-		}
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
 
-		@Override
-		public CellStyleFont getFont() {
-			return this.dfont;
-		}
+                sb.append("DefaultCellStyle[border=");
+                sb.append(dborder);
+                sb.append(", background=");
+                sb.append(dbackground);
+                sb.append(", foreground=");
+                sb.append(dforeground);
+                sb.append(", font=");
+                sb.append(dfont);
+                sb.append(", horziontalalgin=");
+                sb.append(dhalgin);
+                sb.append(", verticalalgin=");
+                sb.append(dvalign);
+                sb.append(']');
 
-		@Override
-		public CellStyleHorizontalAlignment getHorizontalAlignment() {
-			return this.dhalgin;
-		}
+            return sb.toString();
+        }
 
-		@Override
-		public CellStyleVerticalAlignment getVerticalAlignment() {
-			return this.dvalign;
-		}
+        @Override
+        public CellStyleBorder getBorder() {
+            return this.dborder;
+        }
 
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result
-					+ ((dbackground == null) ? 0 : dbackground.hashCode());
-			result = prime * result
-					+ ((dborder == null) ? 0 : dborder.hashCode());
-			result = prime * result + ((dfont == null) ? 0 : dfont.hashCode());
-			result = prime * result
-					+ ((dforeground == null) ? 0 : dforeground.hashCode());
-			result = prime * result
-					+ ((dhalgin == null) ? 0 : dhalgin.hashCode());
-			result = prime * result
-					+ ((dvalign == null) ? 0 : dvalign.hashCode());
-			return result;
-		}
+        @Override
+        public CellStyleColor getBackgroundColor() {
+            return this.dbackground;
+        }
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			DefaultCellStyle other = (DefaultCellStyle) obj;
-			if (dbackground != other.dbackground)
-				return false;
-			if (dborder != other.dborder)
-				return false;
-			if (dfont != other.dfont)
-				return false;
-			if (dforeground != other.dforeground)
-				return false;
-			if (dhalgin != other.dhalgin)
-				return false;
-			if (dvalign != other.dvalign)
-				return false;
-			return true;
-		}
-	}
+        @Override
+        public CellStyleColor getForegroundColor() {
+            return this.dforeground;
+        }
+
+        @Override
+        public CellStyleFont getFont() {
+            return this.dfont;
+        }
+
+        @Override
+        public CellStyleHorizontalAlignment getHorizontalAlignment() {
+            return this.dhalgin;
+        }
+
+        @Override
+        public CellStyleVerticalAlignment getVerticalAlignment() {
+            return this.dvalign;
+        }
+
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result
+                    + ((dbackground == null) ? 0 : dbackground.hashCode());
+            result = prime * result
+                    + ((dborder == null) ? 0 : dborder.hashCode());
+            result = prime * result + ((dfont == null) ? 0 : dfont.hashCode());
+            result = prime * result
+                    + ((dforeground == null) ? 0 : dforeground.hashCode());
+            result = prime * result
+                    + ((dhalgin == null) ? 0 : dhalgin.hashCode());
+            result = prime * result
+                    + ((dvalign == null) ? 0 : dvalign.hashCode());
+            return result;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            DefaultCellStyle other = (DefaultCellStyle) obj;
+            if (dbackground != other.dbackground) {
+                return false;
+            }
+            if (dborder != other.dborder) {
+                return false;
+            }
+            if (dfont != other.dfont) {
+                return false;
+            }
+            if (dforeground != other.dforeground) {
+                return false;
+            }
+            if (dhalgin != other.dhalgin) {
+                return false;
+            }
+            if (dvalign != other.dvalign) {
+                return false;
+            }
+            return true;
+        }
+    }
 }

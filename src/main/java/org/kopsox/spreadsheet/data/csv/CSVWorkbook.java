@@ -61,7 +61,6 @@ public class CSVWorkbook extends AbstractWorkbook {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CSVWorkbook other = (CSVWorkbook) obj;
         return true;
     }
 
@@ -118,7 +117,7 @@ public class CSVWorkbook extends AbstractWorkbook {
             throw new IllegalStateException("No sheet created");
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stream))) {
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stream, "UTF-8"))) {
             int rows = this.sheet.getNumberOfLastRow();
             int maxColumns = this.sheet.getAbsoluteLastColumnIndex();
 
