@@ -74,5 +74,13 @@ public abstract class AbstractValue implements Value {
 		} else if (!formula.equals(other.formula))
 			return false;
 		return true;
-	}
+    }
+
+    @Override
+    public int compareTo(Value o) {
+        if (this.equals(o)) {
+            return 0;
+        }
+        return asString().compareTo(o.asString());
+    }
 }

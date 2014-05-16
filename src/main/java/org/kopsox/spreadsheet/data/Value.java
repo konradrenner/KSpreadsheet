@@ -22,10 +22,16 @@ import java.sql.Time;
 import java.util.Date;
 
 /**
+ * Represents a Value from a spreadsheet cell, the compareTo-Method uses the
+ * String representation of the Value for the natural ordering. Note: just the
+ * asString method guarantees, that you will get the String representation of
+ * the internal value, the toString method may create a String a technical
+ * representation of a subclass (e.g. for logging)
+ *
  * @author Konrad Renner
  *
  */
-public interface Value extends Serializable {
+public interface Value extends Serializable, Comparable<Value> {
 
 	enum Type{
 		BLANK,STRING,DATE,BOOLEAN,TIME,DOUBLE;
