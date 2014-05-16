@@ -28,110 +28,115 @@ import org.kopsox.spreadsheet.data.Value;
  */
 public final class DateValue extends AbstractValue {
 	
-	private static final long serialVersionUID = 3101530032915344295L;
-	
-	private final Date value;
-	
-	public DateValue(final Date v) {
-		this(v,null);
-	}
-	
-	public DateValue(final Date v,final String f) {
-            super(f);
-            Objects.requireNonNull(v, "value must not be null, or use BlankValue class instead");
-            this.value = v;
-	}
+    private static final long serialVersionUID = 3101530032915344295L;
+
+    private final Date value;
+
+    public DateValue(final Date v) {
+        this(v, null);
+    }
+
+    public DateValue(final Date v, final String f) {
+        super(f);
+        Objects.requireNonNull(v, "value must not be null, or use BlankValue class instead");
+        this.value = v;
+    }
 
 
-	/* (non-Javadoc)
-	 * @see org.kopsox.spreadsheet.data.Value#getType()
-	 */
-	@Override
-	public Type getType() {
-		return Value.Type.DATE;
-	}
+    /* (non-Javadoc)
+     * @see org.kopsox.spreadsheet.data.Value#getType()
+     */
+    @Override
+    public Type getType() {
+        return Value.Type.DATE;
+    }
 
-	/* (non-Javadoc)
-	 * @see org.kopsox.spreadsheet.data.Value#toBoolean()
-	 */
-	@Override
-	public Boolean asBoolean() {
-            return Boolean.FALSE;
-	}
+    /* (non-Javadoc)
+     * @see org.kopsox.spreadsheet.data.Value#toBoolean()
+     */
+    @Override
+    public Boolean asBoolean() {
+        return Boolean.FALSE;
+    }
 
-	/* (non-Javadoc)
-	 * @see org.kopsox.spreadsheet.data.Value#toDate()
-	 */
-	@Override
-	public Date asDate() {
-		return this.value;
-	}
+    /* (non-Javadoc)
+     * @see org.kopsox.spreadsheet.data.Value#toDate()
+     */
+    @Override
+    public Date asDate() {
+        return this.value;
+    }
 
-	/* (non-Javadoc)
-	 * @see org.kopsox.spreadsheet.data.Value#toDate(java.lang.String)
-	 */
-	@Override
-	public Date asDate(String format) {
-		return this.value;
-	}
+    /* (non-Javadoc)
+     * @see org.kopsox.spreadsheet.data.Value#toDate(java.lang.String)
+     */
+    @Override
+    public Date asDate(String format) {
+        return this.value;
+    }
 
-	/* (non-Javadoc)
-	 * @see org.kopsox.spreadsheet.data.Value#toDouble()
-	 */
-	@Override
-	public Double asDouble() {
-		return null;
-	}
+    /* (non-Javadoc)
+     * @see org.kopsox.spreadsheet.data.Value#toDouble()
+     */
+    @Override
+    public Double asDouble() {
+        return null;
+    }
 
-	/* (non-Javadoc)
-	 * @see org.kopsox.spreadsheet.data.Value#toTime()
-	 */
-	@Override
-	public Time asTime() {
-		return new Time(this.value.getTime());
-	}
-	
+    /* (non-Javadoc)
+     * @see org.kopsox.spreadsheet.data.Value#toTime()
+     */
+    @Override
+    public Time asTime() {
+        return new Time(this.value.getTime());
+    }
 
-	@Override
-	public String asString() {
-		return this.value.toString();
-	}
 
-	@Override
-	public String toString() {
-		
-		StringBuilder sb = new StringBuilder();
-		sb.append("DateValue[");
-		sb.append(super.toString());
-		sb.append("value=");
-		sb.append(value);
-		sb.append(']');
-		
-		return sb.toString();
-	}
+    @Override
+    public String asString() {
+        return new java.sql.Date(this.value.getTime()).toString();
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((value == null) ? 0 : value.hashCode());
-		return result;
-	}
+    @Override
+    public String toString() {
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		DateValue other = (DateValue) obj;
-		if (value == null) {
-			if (other.value != null)
-				return false;
-		} else if (!value.equals(other.value))
-			return false;
-		return true;
-	}
+        StringBuilder sb = new StringBuilder();
+        sb.append("DateValue[");
+        sb.append(super.toString());
+        sb.append("value=");
+        sb.append(value);
+        sb.append(']');
+
+        return sb.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((value == null) ? 0 : value.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!super.equals(obj)) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        DateValue other = (DateValue) obj;
+        if (value == null) {
+            if (other.value != null) {
+                return false;
+            }
+        } else if (!value.equals(other.value)) {
+            return false;
+        }
+        return true;
+    }
 }
