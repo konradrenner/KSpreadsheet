@@ -1,7 +1,7 @@
 KSpreadsheet
 ============
 
-Abstraction layer for spreadsheet libraries (poi (MS Excel), odfdom (OpenDocument Spreadsheet)).
+Abstraction layer for spreadsheet libraries (poi (MS Excel), odfdom (OpenDocument Spreadsheet)) and CSV.
 
 Travis:
 [![Build Status](https://secure.travis-ci.org/konradrenner/KSpreadsheet.png?branch=master)](http://travis-ci.org/konradrenner/KSpreadsheet)
