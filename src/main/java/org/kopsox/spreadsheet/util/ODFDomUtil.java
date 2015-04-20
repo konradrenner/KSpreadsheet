@@ -52,16 +52,30 @@ public final class ODFDomUtil {
 			return new BlankValue();
 		}
 		
-		//NUMERIC
-		if(OfficeValueTypeAttribute.Value.FLOAT.toString().equalsIgnoreCase(cell.getValueType()) ||
-		   OfficeValueTypeAttribute.Value.CURRENCY.toString().equalsIgnoreCase(cell.getValueType()) ||
-		   OfficeValueTypeAttribute.Value.PERCENTAGE.toString().equalsIgnoreCase(cell.getValueType())) {
+		//FLOAT
+		if(OfficeValueTypeAttribute.Value.FLOAT.toString().equalsIgnoreCase(cell.getValueType())) {
 			
 			DoubleValue value = new DoubleValue(cell.getDoubleValue());
 			value.setFormula(cell.getFormula());
 			
 			return value;
 			
+		//CURRENCY
+		}else if(OfficeValueTypeAttribute.Value.CURRENCY.toString().equalsIgnoreCase(cell.getValueType())) {
+			
+			DoubleValue value = new DoubleValue(cell.getCurrencyValue());
+			value.setFormula(cell.getFormula());
+			
+			return value;
+			
+		//PERCENTAGE
+		}else if(OfficeValueTypeAttribute.Value.PERCENTAGE.toString().equalsIgnoreCase(cell.getValueType())) {
+			
+			DoubleValue value = new DoubleValue(cell.getPercentageValue());
+			value.setFormula(cell.getFormula());
+
+			return value;
+
 		//STRING
 		}else if(OfficeValueTypeAttribute.Value.STRING.toString().equalsIgnoreCase(cell.getValueType())) {
 			
