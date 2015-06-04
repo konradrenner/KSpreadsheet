@@ -23,9 +23,9 @@ import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
 import java.util.SortedMap;
 import java.util.TreeMap;
+
 import org.kopsox.spreadsheet.data.Value;
 import org.kopsox.spreadsheet.data.common.AbstractSheet;
 import org.kopsox.spreadsheet.data.common.BlankValue;
@@ -43,7 +43,7 @@ public class CSVSheet extends AbstractSheet {
 
     public CSVSheet(CSVWorkbook workbook, String nam, int idx) {
         super(workbook, nam, idx);
-        values = new TreeMap<>();
+        values = new TreeMap<CellID, Value>();
         absoluteLastColumnIndex = 0;
     }
 
@@ -91,10 +91,14 @@ public class CSVSheet extends AbstractSheet {
         }
         return value;
     }
-    
+
     void setValueAt(CellID id, Value value) {
-        Objects.requireNonNull(id, "Row and Column must not be null");
-        Objects.requireNonNull(value, "Value must not be null");
+        if (id == null) {
+            throw new NullPointerException("Row and Column must not be null");
+        }
+        if (value == null) {
+            throw new NullPointerException("Value must not be null");
+        }
 
         this.values.put(id, value);
         if ((id.getColumn() + 1) > this.absoluteLastColumnIndex) {
@@ -104,7 +108,7 @@ public class CSVSheet extends AbstractSheet {
     @Override
     public void setValueAt(int row, int column, String value) {
         Value val = value == null ? new BlankValue() : new StringValue(value);
-        
+
         setValueAt(new CellID(row, column), val);
     }
     @Override
@@ -117,7 +121,7 @@ public class CSVSheet extends AbstractSheet {
     public void setValueAt(int row, int column, Date value, String dateFormat) {
         DateFormat format = dateFormat == null ? DateFormat.getDateInstance() : new SimpleDateFormat(dateFormat);
         Value val = value == null ? new BlankValue() : new StringValue(format.format(value));
-        
+
         setValueAt(new CellID(row, column), val);
     }
     @Override

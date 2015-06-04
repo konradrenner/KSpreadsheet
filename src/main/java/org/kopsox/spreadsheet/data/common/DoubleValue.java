@@ -1,7 +1,7 @@
 /**
  * KSpreadsheet
  * Copyright (C) 2010 Free Software Foundation, Inc. <http://fsf.org/>
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.sql.Time;
 import java.util.Date;
-import java.util.Objects;
+
 import org.kopsox.spreadsheet.data.Value;
 
 /**
@@ -27,21 +27,23 @@ import org.kopsox.spreadsheet.data.Value;
  *
  */
 public final class DoubleValue extends AbstractValue {
-	
+
 	private static final long serialVersionUID = -2697872226107279659L;
-	
+
 	private final Double value;
-	
+
 	public DoubleValue(final Double v) {
 		this(v,null);
 	}
-	
+
 	public DoubleValue(final Double v,final String f) {
             super(f);
-            Objects.requireNonNull(v, "value must not be null, or use BlankValue class instead");
+            if (v == null) {
+                throw new NullPointerException("value must not be null, or use BlankValue class instead");
+            }
             this.value = v;
 	}
-	
+
 
 
 	/* (non-Javadoc)
@@ -98,7 +100,7 @@ public final class DoubleValue extends AbstractValue {
 	public Time asTime() {
 		return null;
 	}
-	
+
 
 	@Override
 	public String asString() {
@@ -107,14 +109,14 @@ public final class DoubleValue extends AbstractValue {
 
 	@Override
 	public String toString() {
-		
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("DoubleValue[");
 		sb.append(super.toString());
 		sb.append("value=");
 		sb.append(value);
 		sb.append(']');
-		
+
 		return sb.toString();
 	}
 
