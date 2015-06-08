@@ -27,7 +27,7 @@ import org.kopsox.spreadsheet.data.csv.SeparatorStrategy;
 import org.kopsox.spreadsheet.data.excel.ExcelWorkbook;
 import org.kopsox.spreadsheet.data.ods.OpenDocumentWorkbook;
 import org.kopsox.spreadsheet.data.ooxml.OOXMLWorkbook;
-import org.odftoolkit.odfdom.doc.OdfSpreadsheetDocument;
+import org.odftoolkit.simple.SpreadsheetDocument;
 
 /**
  * Factory-class which loads or creates Spreadsheets.<br>
@@ -64,7 +64,7 @@ public final class SpreadsheetFactory {
         }, OPENDOCUMENT {
             @Override
                 public OpenDocumentWorkbook createWorkbook(String name) throws Exception {
-                return new OpenDocumentWorkbook(name, OdfSpreadsheetDocument.newSpreadsheetDocument());
+                return new OpenDocumentWorkbook(name, SpreadsheetDocument.newSpreadsheetDocument());
             }
 
                 @SuppressWarnings("synthetic-access")
@@ -136,7 +136,7 @@ public final class SpreadsheetFactory {
 	
     private static OpenDocumentWorkbook openOpenDocumentWorkbook(String name, InputStream str) throws IOException {
         try {
-                return new OpenDocumentWorkbook(name, (OdfSpreadsheetDocument) OdfSpreadsheetDocument.loadDocument(str));
+                return new OpenDocumentWorkbook(name, (SpreadsheetDocument) SpreadsheetDocument.loadDocument(str));
         } catch (Exception e) {
             throw new IOException(e);
         }
