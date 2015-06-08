@@ -83,18 +83,19 @@ public enum SeparatorStrategy {
                 return false;
             }
 
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"))) {
-
+            BufferedReader reader = null;
+            try {
+                reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
                 String line;
                 int rowNumber = 0;
                 int lastColumnIndex = 0;
-                
+
                 int value;
                 StringBuilder row = new StringBuilder();
                 while ((value = reader.read()) != -1) {
                     char charvalue = (char) value;
 
-                    if (System.lineSeparator().equalsIgnoreCase(Character.toString(charvalue))) {
+                    if (System.getProperty("line.separator").equalsIgnoreCase(Character.toString(charvalue))) {
                         StringBuilder column = new StringBuilder();
                         int i;
                         int colIndex = 0;
@@ -126,17 +127,23 @@ public enum SeparatorStrategy {
                         if (colIndex > lastColumnIndex) {
                             lastColumnIndex = colIndex + 1;
                         }
-                        
+
                         row = new StringBuilder();
                         rowNumber++;
                     } else {
                         row.append(charvalue);
                     }
-                    
+
                 }
                 sheet.setAbsoluteLastColumnIndex(lastColumnIndex);
             } catch (IOException ex) {
                 throw new IllegalStateException(ex);
+            } finally {
+                try {
+                    if (reader != null) reader.close();
+                } catch (IOException ex) {
+                    throw new IllegalStateException(ex);
+                }
             }
 
 

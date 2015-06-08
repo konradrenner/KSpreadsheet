@@ -32,8 +32,12 @@ public class CSVCommaWorkbookTest extends AbstractCSVWorkbookTest {
     @Before
     @Override
     public void setUp() throws Exception {
-        try (InputStream stream = TestUtil.getSpreadSheetStrean("csv_test_comma.csv")) {
+	InputStream stream = null;
+        try {
+            stream = TestUtil.getSpreadSheetStream("csv_test_comma.csv");
             workbook = (CSVWorkbook) SpreadsheetFactory.SpreadsheetType.CSV_COMMA.openWorkbook("name", stream);
+        } finally {
+            if (stream != null) stream.close();
         }
     }
 

@@ -41,8 +41,12 @@ public class CSVSheetTest {
     @Before
     public void setUp() throws Exception {
         Workbook workbook;
-        try (InputStream stream = TestUtil.getSpreadSheetStrean("csv_test_comma.csv")) {
+        InputStream stream = null;
+        try {
+            stream = TestUtil.getSpreadSheetStream("csv_test_comma.csv");
             workbook = SpreadsheetFactory.SpreadsheetType.CSV_COMMA.openWorkbook("name", stream);
+        } finally {
+            if (stream != null) stream.close();
         }
         this.sheet = (CSVSheet) workbook.getSheetByIndex(0);
     }
@@ -69,7 +73,7 @@ public class CSVSheetTest {
         CSVSheet.CellID expectedId = new CSVSheet.CellID(21, 30);
         StringValue expectedValue = new StringValue("TEST");
         this.sheet.setValueAt(expectedId, expectedValue);
-        
+
         assertEquals(expectedValue, this.sheet.getValueAt(expectedId.getRow(), expectedId.getColumn()));
     }
 

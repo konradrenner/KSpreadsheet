@@ -15,7 +15,7 @@ public class ExcelSheetTest extends AbstractSheetTest {
 	@Before
 	@Override
 	public void setUp() throws Exception {
-		InputStream stream = TestUtil.getSpreadSheetStrean("excel_test.xls");
+		InputStream stream = TestUtil.getSpreadSheetStream("excel_test.xls");
 		this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.EXCEL);
 		stream.close();
 		this.sheet = this.workbook.getSheetByIndex(0);

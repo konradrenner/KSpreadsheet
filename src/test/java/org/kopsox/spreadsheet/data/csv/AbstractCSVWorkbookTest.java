@@ -66,21 +66,29 @@ public abstract class AbstractCSVWorkbookTest {
 
         assertEquals(1, book.getNumberOfSheets());
         assertEquals(0, book.getSelectedSheetIndex());
-        
+
         book.getSheetByIndex(0).setValueAt(3, 3, "Test");
 
         File newFile = new File("newCSV.csv");
 
-        try (OutputStream stream = new FileOutputStream(newFile)) {
+        OutputStream stream = null;
+        try {
+            stream = new FileOutputStream(newFile);
             book.save(stream);
+        } finally {
+            stream.close();
         }
 
-        try (InputStream stream = TestUtil.getSpreadSheetStrean("csv_test_comma.csv")) {
-            book = SpreadsheetFactory.SpreadsheetType.CSV_COMMA.openWorkbook("name", new FileInputStream(newFile));
+        InputStream istream = null;
+        try {
+            istream = new FileInputStream(newFile);
+            book = SpreadsheetFactory.SpreadsheetType.CSV_COMMA.openWorkbook("name", istream);
             assertNotNull(book);
             String toCheck = book.getSheetByIndex(0).getValueAt(3, 3).asString();
             assertEquals("Test", toCheck);
             assertEquals(new BlankValue(), book.getSheetByIndex(0).getValueAt(1, 2));
+        } finally {
+            if (istream != null) istream.close();
         }
     }
 
