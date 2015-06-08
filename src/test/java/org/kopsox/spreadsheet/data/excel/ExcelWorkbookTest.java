@@ -20,7 +20,7 @@ public class ExcelWorkbookTest extends AbstractWorkbookTest {
 	@Before
 	@Override
 	public void setUp() throws Exception {
-        InputStream stream = TestUtil.getSpreadSheetStrean("excel_test.xls");
+        InputStream stream = TestUtil.getSpreadSheetStream("excel_test.xls");
         this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.EXCEL);
         stream.close();
         this.sheetNames = new ArrayList<String>(3);
@@ -34,7 +34,7 @@ public class ExcelWorkbookTest extends AbstractWorkbookTest {
 	@Test
 	public void testSave() {
 		File newFile = new File("newExcel.xls");
-		
+
 		try {
 			OutputStream stream = new FileOutputStream(newFile);
 			this.workbook.save(stream);

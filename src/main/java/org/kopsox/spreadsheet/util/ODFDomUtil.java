@@ -25,8 +25,8 @@ import org.kopsox.spreadsheet.data.common.BooleanValue;
 import org.kopsox.spreadsheet.data.common.DateValue;
 import org.kopsox.spreadsheet.data.common.DoubleValue;
 import org.kopsox.spreadsheet.data.common.TimeValue;
-import org.odftoolkit.odfdom.doc.table.OdfTableCell;
 import org.odftoolkit.odfdom.dom.attribute.office.OfficeValueTypeAttribute;
+import org.odftoolkit.simple.table.Cell;
 
 
 /**
@@ -46,7 +46,7 @@ public final class ODFDomUtil {
 	 * @param cell
 	 * @return Value
 	 */
-	public static final Value getValueFromCell(OdfTableCell cell) {
+	public static final Value getValueFromCell(Cell cell) {
 		
 		if(cell == null) {
 			return new BlankValue();

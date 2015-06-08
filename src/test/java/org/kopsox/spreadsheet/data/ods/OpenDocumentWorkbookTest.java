@@ -19,7 +19,7 @@ public class OpenDocumentWorkbookTest extends AbstractWorkbookTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-	InputStream stream = TestUtil.getSpreadSheetStrean("opendocument_test.ods");
+	InputStream stream = TestUtil.getSpreadSheetStream("opendocument_test.ods");
         this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.OPENDOCUMENT);
         stream.close();
         this.sheetNames = new ArrayList<String>(3);
@@ -33,7 +33,7 @@ public class OpenDocumentWorkbookTest extends AbstractWorkbookTest {
 	@Test
 	public void testSave() {
 		File newFile = new File("newOpenDocument.ods");
-		
+
 		try {
 			OutputStream stream = new FileOutputStream(newFile);
 			this.workbook.save(stream);

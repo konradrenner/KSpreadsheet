@@ -21,8 +21,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import org.kopsox.spreadsheet.data.Sheet;
 import org.kopsox.spreadsheet.data.common.AbstractWorkbook;
-import org.odftoolkit.odfdom.doc.OdfSpreadsheetDocument;
-import org.odftoolkit.odfdom.doc.table.OdfTable;
+import org.odftoolkit.simple.SpreadsheetDocument;
+import org.odftoolkit.simple.table.Table;
 
 /**
  * Wrapper around the OFDOM-Toolkit
@@ -31,10 +31,10 @@ import org.odftoolkit.odfdom.doc.table.OdfTable;
  */
 public class OpenDocumentWorkbook extends AbstractWorkbook {
 
-	private final OdfSpreadsheetDocument workbook;
+	private final SpreadsheetDocument workbook;
 	private int indexOfSelectedSheet;
 	
-	public OpenDocumentWorkbook(final String name,final OdfSpreadsheetDocument wb) {
+	public OpenDocumentWorkbook(final String name,final SpreadsheetDocument wb) {
 		super(name);
 		this.workbook = wb;
 		this.indexOfSelectedSheet = 0;
@@ -45,9 +45,9 @@ public class OpenDocumentWorkbook extends AbstractWorkbook {
 	 */
 	@Override
 	public Sheet createNewSheet() {
-            OdfTable newSheet = OdfTable.newTable(this.workbook);
+            Table newSheet = Table.newTable(this.workbook);
             if (newSheet == null) {
-                throw new IllegalStateException("Could not create new OdfTable");
+                throw new IllegalStateException("Could not create new Table");
             }
 		
 		OpenDocumentSheet sheet = new OpenDocumentSheet(this,newSheet,newSheet.getTableName(),this.workbook.getTableList().size()-1);
@@ -61,9 +61,9 @@ public class OpenDocumentWorkbook extends AbstractWorkbook {
 	 */
 	@Override
 	public Sheet createNewSheet(String name) {
-            OdfTable newSheet = OdfTable.newTable(this.workbook);
+            Table newSheet = Table.newTable(this.workbook);
             if (newSheet == null) {
-                throw new IllegalStateException("Could not create new OdfTable");
+                throw new IllegalStateException("Could not create new Table");
             }
 
 		newSheet.setTableName(name);
@@ -110,7 +110,7 @@ public class OpenDocumentWorkbook extends AbstractWorkbook {
 	
 	private final Sheet getSheet(String name,int number) {
 		if(!containsSheet(name)) {
-			OdfTable odfsheet = this.workbook.getTableByName(name);
+			Table odfsheet = this.workbook.getTableByName(name);
 			
 			OpenDocumentSheet sheet = new OpenDocumentSheet(this,odfsheet,name,number);
 			
@@ -126,9 +126,9 @@ public class OpenDocumentWorkbook extends AbstractWorkbook {
 	@Override
 	public Sheet getSheetByIndex(int number) {
 		
-		OdfTable odfsheet = this.workbook.getTableList().get(number);
+		Table sheet = this.workbook.getTableList().get(number);
 		
-		return getSheet(odfsheet.getTableName(),number);
+		return getSheet(sheet.getTableName(),number);
 	}
 
 	/* (non-Javadoc)

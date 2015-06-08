@@ -32,8 +32,12 @@ public class CSVSemicolonWorkbookTest extends AbstractCSVWorkbookTest {
     @Before
     @Override
     public void setUp() throws Exception {
-        try (InputStream stream = TestUtil.getSpreadSheetStrean("csv_test_semicolon.csv")) {
+	InputStream stream = null;
+        try {
+            stream = TestUtil.getSpreadSheetStream("csv_test_semicolon.csv");
             workbook = (CSVWorkbook) SpreadsheetFactory.SpreadsheetType.CSV_SEMICOLON.openWorkbook("name", stream);
+        } finally {
+            if (stream != null) stream.close();
         }
     }
 

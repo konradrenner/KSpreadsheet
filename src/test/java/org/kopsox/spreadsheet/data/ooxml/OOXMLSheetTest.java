@@ -15,8 +15,8 @@ public class OOXMLSheetTest extends AbstractSheetTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-            
-		InputStream stream = TestUtil.getSpreadSheetStrean("ooxml_test.xlsx");
+
+		InputStream stream = TestUtil.getSpreadSheetStream("ooxml_test.xlsx");
 		this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.OOXML);
 		stream.close();
 		this.sheet = this.workbook.getSheetByIndex(0);

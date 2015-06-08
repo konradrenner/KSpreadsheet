@@ -27,9 +27,9 @@ import org.kopsox.spreadsheet.data.common.AbstractSheet;
 import org.kopsox.spreadsheet.data.common.BlankValue;
 import org.kopsox.spreadsheet.style.CellStyle;
 import org.kopsox.spreadsheet.util.ODFDomUtil;
-import org.odftoolkit.odfdom.doc.table.OdfTable;
-import org.odftoolkit.odfdom.doc.table.OdfTableCell;
-import org.odftoolkit.odfdom.doc.table.OdfTableCellRange;
+import org.odftoolkit.simple.table.Table;
+import org.odftoolkit.simple.table.Cell;
+import org.odftoolkit.simple.table.CellRange;
 
 /**
  * 
@@ -37,9 +37,9 @@ import org.odftoolkit.odfdom.doc.table.OdfTableCellRange;
  */
 public class OpenDocumentSheet extends AbstractSheet {
 	
-	private final OdfTable sheet;
+	private final Table sheet;
 	
-	public OpenDocumentSheet(Workbook wb, OdfTable sh, String name,int index) {
+	public OpenDocumentSheet(Workbook wb, Table sh, String name,int index) {
 		super(wb,name,index);
 		
 		this.sheet = sh;
@@ -74,7 +74,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	@Override
 	public Value getValueAt(int row, int column) {
 		
-		OdfTableCell cell = this.sheet.getCellByPosition(column, row);
+		Cell cell = this.sheet.getCellByPosition(column, row);
 		
 		if(cell == null) {
 			return new BlankValue();
@@ -88,7 +88,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	 */
 	@Override
 	public void setFormualaAt(int row, int column, String formula) {
-		OdfTableCell cell = this.sheet.getCellByPosition(column, row);
+		Cell cell = this.sheet.getCellByPosition(column, row);
 		
 		cell.setFormula(formula);
 	}
@@ -98,7 +98,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	 */
 	@Override
 	public void setValueAt(int row, int column, String value) {
-		OdfTableCell cell = this.sheet.getCellByPosition(column, row);
+		Cell cell = this.sheet.getCellByPosition(column, row);
 		
 		cell.setStringValue(value);
 	}
@@ -109,7 +109,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	@SuppressWarnings("boxing")
 	@Override
 	public void setValueAt(int row, int column, double value) {
-		OdfTableCell cell = this.sheet.getCellByPosition(column, row);
+		Cell cell = this.sheet.getCellByPosition(column, row);
 		
 		cell.setDoubleValue(value);
 	}
@@ -119,7 +119,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	 */
 	@Override
 	public void setValueAt(int row, int column, Date value,String format) {
-		OdfTableCell cell = this.sheet.getCellByPosition(column, row);
+		Cell cell = this.sheet.getCellByPosition(column, row);
 		Calendar cal = new GregorianCalendar();
 		cal.setTimeInMillis(value.getTime());
 		cell.setFormatString(format);
@@ -132,7 +132,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	@SuppressWarnings("boxing")
 	@Override
 	public void setValueAt(int row, int column, boolean value) {
-		OdfTableCell cell = this.sheet.getCellByPosition(column, row);
+		Cell cell = this.sheet.getCellByPosition(column, row);
 		
 		cell.setBooleanValue(value);
 
@@ -143,7 +143,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 	 */
 	@Override
 	public void setValueAt(int row, int column, Time value,String format) {
-		OdfTableCell cell = this.sheet.getCellByPosition(column, row);
+		Cell cell = this.sheet.getCellByPosition(column, row);
 		Calendar cal = new GregorianCalendar();
 		cal.setTimeInMillis(value.getTime());
 		cell.setFormatString(format);
@@ -159,7 +159,7 @@ public class OpenDocumentSheet extends AbstractSheet {
 		
 		CellRegion region = new CellRegion(firstRow, lastRow, firstColumn, lastColumn,regions.size());
 		
-		OdfTableCellRange range = this.sheet.getCellRangeByPosition(firstColumn, firstRow, lastColumn, lastRow);
+		CellRange range = this.sheet.getCellRangeByPosition(firstColumn, firstRow, lastColumn, lastRow);
 		range.merge();
 		range.setCellRangeName(Integer.toString(region.index));
 		

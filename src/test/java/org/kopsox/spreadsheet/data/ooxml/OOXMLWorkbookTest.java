@@ -19,7 +19,7 @@ public class OOXMLWorkbookTest extends AbstractWorkbookTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-	InputStream stream = TestUtil.getSpreadSheetStrean("ooxml_test.xlsx");
+	InputStream stream = TestUtil.getSpreadSheetStream("ooxml_test.xlsx");
         this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.OOXML);
         stream.close();
         this.sheetNames = new ArrayList<String>(3);
@@ -33,7 +33,7 @@ public class OOXMLWorkbookTest extends AbstractWorkbookTest {
 	@Test
 	public void testSave() {
 		File newFile = new File("newOOXML.xlsx");
-		
+
 		try {
 			OutputStream stream = new FileOutputStream(newFile);
 			this.workbook.save(stream);

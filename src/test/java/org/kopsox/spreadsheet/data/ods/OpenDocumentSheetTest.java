@@ -14,7 +14,7 @@ public class OpenDocumentSheetTest extends AbstractSheetTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-		InputStream stream = TestUtil.getSpreadSheetStrean("opendocument_test.ods");
+		InputStream stream = TestUtil.getSpreadSheetStream("opendocument_test.ods");
 		this.workbook = SpreadsheetFactory.openWorkbook("name",stream, SpreadsheetType.OPENDOCUMENT);
 		stream.close();
 		this.sheet = this.workbook.getSheetByIndex(0);
