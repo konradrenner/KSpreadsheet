@@ -1,7 +1,7 @@
 /**
  * KSpreadsheet
  * Copyright (C) 2010 Free Software Foundation, Inc. <http://fsf.org/>
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -23,7 +23,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
+
 import org.kopsox.spreadsheet.data.Value;
 
 /**
@@ -31,27 +31,29 @@ import org.kopsox.spreadsheet.data.Value;
  *
  */
 public final class StringValue extends AbstractValue {
-	
+
 	private static final long serialVersionUID = -6753441907581378287L;
-	
+
 	private final String value;
 	private final String dateFormat;
-	
+
 	public StringValue(final String value) {
 		this(value,null);
 	}
-	
+
 	public StringValue(final String value,final String formula) {
             super(formula);
-            Objects.requireNonNull(value, "value must not be null, or use BlankValue class instead");
+            if (value == null) {
+                throw new NullPointerException("value must not be null, or use BlankValue class instead");
+            }
             this.value = value;
             this.dateFormat = "dd-MM-yyyy";
 	}
-	
+
 
 	@Override
 	public String toString() {
-		
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("StringValue[");
 		sb.append(super.toString());
@@ -60,7 +62,7 @@ public final class StringValue extends AbstractValue {
 		sb.append(",dateFormat=");
 		sb.append(dateFormat);
 		sb.append(']');
-		
+
 		return sb.toString();
 	}
 
@@ -81,7 +83,7 @@ public final class StringValue extends AbstractValue {
 		if(this.value == null) {
                     return Boolean.FALSE;
 		}
-		
+
 		return Boolean.valueOf(this.value);
 	}
 
@@ -137,13 +139,13 @@ public final class StringValue extends AbstractValue {
 		if(this.value == null) {
 			return null;
 		}
-		
+
 		try {
 			return Time.valueOf(this.value);
 		}catch(IllegalArgumentException e) {
 			//return null
 		}
-		
+
 		return null;
 	}
 
@@ -152,18 +154,18 @@ public final class StringValue extends AbstractValue {
 		if(this.value == null) {
 			return null;
 		}
-		
+
 		DateFormat formatter = new SimpleDateFormat(format);
-		
+
 		try {
 			return formatter.parse(this.value);
 		} catch (ParseException e) {
 			//return null
 		}
-		
+
 		return null;
 	}
-	
+
 	@Override
 	public String asString() {
 		return this.value;

@@ -1,7 +1,7 @@
 /**
  * KSpreadsheet
  * Copyright (C) 2010 Free Software Foundation, Inc. <http://fsf.org/>
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.sql.Time;
 import java.util.Date;
-import java.util.Objects;
+
 import org.kopsox.spreadsheet.data.Value;
 
 /**
@@ -27,18 +27,20 @@ import org.kopsox.spreadsheet.data.Value;
  *
  */
 public final class TimeValue extends AbstractValue {
-	
+
 	private static final long serialVersionUID = -5098029058037713412L;
-	
+
 	private final Time value;
-	
+
 	public TimeValue(final Time v) {
 		this(v,null);
 	}
-	
+
 	public TimeValue(final Time v,final String f) {
             super(f);
-            Objects.requireNonNull(v, "value must not be null, or use BlankValue class instead");
+            if (v == null) {
+                throw new NullPointerException("value must not be null, or use BlankValue class instead");
+            }
 		this.value = v;
 	}
 
@@ -67,7 +69,7 @@ public final class TimeValue extends AbstractValue {
 		if(this.value == null) {
 			return null;
 		}
-		
+
 		return new Date(this.value.getTime());
 	}
 
@@ -79,7 +81,7 @@ public final class TimeValue extends AbstractValue {
 		if(this.value == null) {
 			return null;
 		}
-		
+
 		return new Date(this.value.getTime());
 	}
 
@@ -98,7 +100,7 @@ public final class TimeValue extends AbstractValue {
 	public Time asTime() {
 		return this.value;
 	}
-	
+
 	@Override
 	public String asString() {
 		return this.value.toString();
@@ -106,14 +108,14 @@ public final class TimeValue extends AbstractValue {
 
 	@Override
 	public String toString() {
-		
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("TimeValue[");
 		sb.append(super.toString());
 		sb.append("value=");
 		sb.append(value);
 		sb.append(']');
-		
+
 		return sb.toString();
 	}
 

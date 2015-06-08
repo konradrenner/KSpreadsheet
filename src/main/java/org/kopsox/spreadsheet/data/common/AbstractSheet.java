@@ -1,7 +1,7 @@
 /**
  * KSpreadsheet
  * Copyright (C) 2010 Free Software Foundation, Inc. <http://fsf.org/>
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -19,12 +19,11 @@ package org.kopsox.spreadsheet.data.common;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import org.kopsox.spreadsheet.data.Sheet;
 import org.kopsox.spreadsheet.data.Workbook;
 
 /**
- * 
+ *
  * @author Konrad Renner
  */
 public abstract class AbstractSheet implements Sheet {
@@ -32,20 +31,22 @@ public abstract class AbstractSheet implements Sheet {
     protected final Workbook workbook;
     private String name;
     private int index;
-   
+
   //For merged regions
 	protected final Map<CellRegion, CellRegion> regions;
-	
+
     public AbstractSheet(final Workbook workbook, final String nam, final int idx) {
-        Objects.requireNonNull(workbook, "Sheet must belong to a workbook");
+        if (workbook == null) {
+            throw new NullPointerException("Sheet must belong to a workbook");
+        }
 
         this.name = nam;
         this.index = idx;
         this.workbook = workbook;
         this.regions = new HashMap<AbstractSheet.CellRegion, AbstractSheet.CellRegion>();
 	}
-	
-	
+
+
 
 	@Override
 	public Workbook getWorkbook() {
@@ -97,7 +98,7 @@ public abstract class AbstractSheet implements Sheet {
 			return false;
 		return true;
 	}
-   
+
     protected static class CellRegion {
 
         protected final int startRow;
@@ -165,5 +166,5 @@ public abstract class AbstractSheet implements Sheet {
                    + endColumn + "]";
        }
 	}
-	
+
 }
