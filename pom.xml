@@ -24,16 +24,16 @@
       <dependency>
           <groupId>org.apache.poi</groupId>
           <artifactId>poi-ooxml</artifactId>
-          <version>3.10-FINAL</version>
+          <version>3.12</version>
       </dependency>
       <dependency>
           <groupId>org.apache.poi</groupId>
           <artifactId>poi</artifactId>
-          <version>3.10-FINAL</version>
+          <version>3.12</version>
       </dependency>
-            
-            
-            
+
+
+
       <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
@@ -41,7 +41,7 @@
           <scope>test</scope>
       </dependency>
   </dependencies>
-  
+
   <build>
       <plugins>
           <plugin>
